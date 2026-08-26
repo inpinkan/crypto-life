@@ -4,20 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#08101f">
-<title>CRYPTO LIFE v1.0.11</title>
+<title>CRYPTO LIFE v1.0.13</title>
 <style>
 :root{--bg:#070b14;--panel:#10182a;--panel2:#16223a;--line:#53698e;--text:#f4f7ff;--muted:#a9b5ca;--accent:#f2c64f;--good:#72e6ad;--warn:#ffd27c;--blue:#5eb8ff}*{box-sizing:border-box}html,body{margin:0;background:#050913;color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans JP",monospace}body{min-height:100dvh;display:flex;justify-content:center}button,input{font:inherit}button{cursor:pointer;color:inherit}#app{width:min(100%,620px);min-height:100dvh;background:linear-gradient(#08101f,#0a1324);overflow:hidden}.screen{display:none;min-height:100dvh}.screen.active{display:flex;flex-direction:column}.pixel{border:2px solid #7285aa;box-shadow:inset 0 0 0 2px #253551;background:#10192c}.title{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(#061020aa,#061020e8),url('assets/backgrounds/town_night.webp') center/cover}.logo{font-size:clamp(34px,10vw,58px);font-weight:1000;letter-spacing:.08em;text-align:center;text-shadow:3px 3px 0 #294a75,6px 6px 0 #04070d}.sub{margin:8px 0 28px;color:#d8e5ff;text-align:center}.ver,.small{font-size:11px;color:var(--muted)}.menu{width:min(390px,94%);padding:14px;background:#091221e8}.btn,.menu button,.choice{width:100%;padding:13px 12px;margin:5px 0;background:#1a2b49;border:2px solid #7086ad;border-radius:3px;font-weight:800;text-align:left}.menu button:disabled{opacity:.35}.top{min-height:48px;padding:7px 10px;display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:2px solid #263755;background:#0b1425}.top-actions{display:flex;gap:6px}.top-actions button{padding:6px 8px;background:#162744;border:1px solid #667da5;font-size:11px}.main{padding:10px 10px 86px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}.stat{background:#111c30;border:1px solid #40557c;padding:7px 4px;text-align:center}.stat b{display:block;font-size:16px}.stat small{font-size:8px;color:var(--muted)}.xp-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}.progress{flex:1;height:9px;background:#080e1b;border:1px solid #465b80;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#e5b83e,#ffe07f)}.scene{position:relative;aspect-ratio:16/9;overflow:hidden;margin:8px 0;background:#0d1727}.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06101a2b,transparent 28%,transparent 72%,#06101a2b);pointer-events:none}.char{position:absolute;bottom:-4%;height:92%;max-width:52%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 4px 6px #0008);transition:filter .15s}.char.left{left:-2%}.char.right{right:-2%;transform:scaleX(-1)}.char.dim{filter:brightness(.82) drop-shadow(0 4px 6px #0008)}.char.hidden{display:none}.quest{position:absolute;right:8px;top:8px;z-index:4;max-width:46%;padding:6px 8px;background:#071225dc;border:1px solid #607aa5;font-size:9px;line-height:1.45}.quest b{color:var(--accent)}.dialog{padding:12px 13px;margin-bottom:8px;min-height:128px}.speaker{display:inline-block;color:var(--accent);font-weight:900;margin-bottom:7px}.dialog p{margin:0;line-height:1.8;font-size:14px;min-height:3.6em}.dialog-next{float:right;margin-top:5px;font-size:18px;color:var(--accent);animation:blink 1s steps(2,end) infinite}.dialog-next.hidden{visibility:hidden}.dialog-controls{display:flex;gap:6px;margin-top:8px}.mini{padding:7px 9px;background:#142440;border:1px solid #53698e;font-size:10px}.mini:disabled{opacity:.35}.logrow{width:100%;display:flex;justify-content:space-between;gap:8px;padding:9px;margin:5px 0;background:#121f35;border:1px solid #40557c;color:#fff;text-align:left}.logrow.locked{opacity:.55}.lognum{color:var(--accent);font-weight:900}.logdetail{margin-top:8px;padding:10px;border:1px solid #40557c;background:#0c1628}.lognav{display:flex;justify-content:space-between;gap:6px;margin-top:10px}@keyframes blink{50%{opacity:.25}}.choices{display:grid;gap:6px;margin-top:10px}.choice{margin:0;background:#192a48}.choice:hover{background:#223a61}.card{background:#101a2d;border:1px solid #34496d;padding:11px;margin-bottom:8px}.card h3{margin:0 0 8px;font-size:14px;color:#e8eeff}.card p{margin:5px 0;line-height:1.6;font-size:12px;color:#dce5fa}.nav{position:fixed;bottom:0;width:min(100%,620px);display:grid;grid-template-columns:repeat(4,1fr);background:#0b1322;border-top:2px solid #304565;padding-bottom:env(safe-area-inset-bottom);z-index:8}.nav button{border:0;background:transparent;color:#aab6d0;padding:10px 4px;font-size:10px}.nav button.active{color:#fff;background:#192842}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{width:min(480px,100%);max-height:85dvh;overflow:auto;padding:16px}.close{float:right;background:#253a60;border:2px solid #6b7ea7;color:white;padding:6px 9px}input{width:100%;padding:13px;background:#0c1425;border:2px solid #61749c;color:white;margin:8px 0 14px}.badge{display:inline-block;padding:7px 8px;border:1px solid #7287b2;font-size:10px;margin:3px}.itemcard{padding:10px;margin:7px 0;border:1px solid #40557c;background:#0c1628}.itemcard b{color:#fff}.itemcard p{margin:5px 0}.itemlink{display:inline-block;margin-top:5px;padding:7px 9px;border:1px solid #607aa5;background:#172945;color:#fff;text-decoration:none}.iconpick{display:inline-block;width:auto!important;margin:3px!important;padding:8px!important}.iconpick.selected{border-color:var(--accent);color:var(--accent)}.good{color:var(--good)}.warn{color:var(--warn)}.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#eef3ff;color:#0c1221;padding:10px 13px;border:3px solid #273b63;display:none;width:min(90%,440px);font-weight:800;z-index:30}.toast.show{display:block}@media(max-width:420px){.main{padding-left:7px;padding-right:7px}.dialog p{font-size:13px}.char{height:88%}.quest{font-size:8px}.status{gap:3px}.stat{padding:6px 2px}.top{padding:6px 7px}}@media(min-width:800px){body{padding:18px 0}#app{min-height:calc(100dvh - 36px);border:3px solid #263a59;box-shadow:0 0 0 4px #0b1423,0 20px 80px #000}.screen,.title{min-height:calc(100dvh - 36px)}}
 
-#bootLoader{position:fixed;inset:0;z-index:99999;background:#070b14;display:flex;align-items:center;justify-content:center;padding:24px}
+#openingSplash{position:fixed;inset:0;z-index:100000;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 1.8s ease;pointer-events:none}
+#openingSplash.show{opacity:1}
+#openingSplash.fadeout{opacity:0;transition-duration:1.6s}
+#openingSplash img{width:100%;height:100%;object-fit:contain;background:#000}
+#bootLoader{position:fixed;inset:0;z-index:99999;background:#070b14;display:none;align-items:center;justify-content:center;padding:24px}
+#bootLoader.show{display:flex}
 #bootLoader.ready .bootSpin{display:none}
-.bootCard{width:min(420px,92vw);text-align:center;color:#fff}
+.bootCard{width:min(520px,92vw);text-align:center;color:#fff}
 .bootTitle{font-size:28px;font-weight:900;letter-spacing:.08em;margin-bottom:18px}
-.bootBar{height:10px;border-radius:999px;background:#ffffff1a;overflow:hidden;margin:12px 0}
-#bootProgress{height:100%;width:0;background:#fff;transition:width .12s linear}
-#bootStatus{font-size:13px;opacity:.78;min-height:20px}
+.bootBar{position:relative;height:10px;border-radius:999px;background:#ffffff1a;margin:12px 0;overflow:visible}
+#bootProgress{height:100%;width:0;background:#fff;border-radius:999px;transition:width .18s linear}
+#bootMascot{background:transparent;border:0;box-shadow:none;position:absolute;left:0;top:50%;width:42px;height:42px;object-fit:contain;transform:translate(-50%,-50%);image-rendering:pixelated;transition:left .18s linear;filter:drop-shadow(0 2px 3px #000)}
+#bootLoader.ready #bootMascot{animation:mascotReady .55s ease-in-out infinite alternate}
+@keyframes mascotReady{from{transform:translate(-50%,-50%) translateY(0)}to{transform:translate(-50%,-50%) translateY(-5px)}}
+#bootStatus{font-size:13px;opacity:.78;min-height:20px;margin-top:14px}
 #bootStart{margin-top:18px;padding:12px 24px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12;color:#fff;font-weight:800;cursor:pointer}
 #bootStart:disabled{opacity:.35;cursor:default}
-
 
 #save.save-guide{border-color:#f2c64f!important;box-shadow:0 0 0 2px #f2c64f55,0 0 18px #f2c64f88;animation:saveGuide 1s ease-in-out infinite alternate}
 @keyframes saveGuide{from{transform:translateY(0)}to{transform:translateY(-1px)}}
@@ -41,24 +48,41 @@
   .modalbox{max-height:92dvh;padding:13px}
 }
 
+
+/* v1.0.13: opening -> blank -> loading are independent from the game start screen */
+body.boot-sequence{background:#000!important}
+body.boot-sequence #app{
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+#openingSplash{
+  background:#000!important;
+  z-index:100001!important;
+}
+#bootLoader{
+  z-index:100000!important;
+}
+
 </style>
 </head>
-<body>
+<body class="boot-sequence">
 
+<div id="openingSplash" aria-hidden="true"><img src="assets/ui/opening_fade.png" alt=""></div>
 <div id="bootLoader">
  <div class="bootCard">
   <div class="bootTitle">CRYPTO LIFE</div>
   <div class="bootSpin">Loading...</div>
-  <div class="bootBar"><div id="bootProgress"></div></div>
-  <div id="bootStatus">ゲームデータを準備しています...</div>
+  <div class="bootBar"><div id="bootProgress"></div><img id="bootMascot" src="assets/ui/loader_icon_transparent.png" alt=""></div>
+  <div id="bootStatus">現在の章を準備しています...</div>
   <button id="bootStart" disabled>TAP TO START</button>
  </div>
 </div>
 
 <div id="app">
-<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.11</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
+<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.13</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
 <section id="gameScreen" class="screen">
-<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.11</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
+<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.13</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
 <main class="main">
 <div class="status"><div class="stat"><b id="lv">1</b><small>LEVEL</small></div><div class="stat"><b id="kn">0</b><small>KNOWLEDGE</small></div><div class="stat"><b id="ex">0</b><small>EXPERIENCE</small></div><div class="stat"><b id="se">0</b><small>SECURITY</small></div></div>
 <div class="xp-row"><div class="progress"><i id="bar" style="width:0"></i></div><span class="small">EXP <span id="xp">0</span>/<span id="need">100</span></span></div>
@@ -167,67 +191,80 @@ $('#returnFromLog').onclick=()=>{if(!logReturnFn)return;const fn=logReturnFn;log
 window.addEventListener('popstate',()=>back());
 load();refresh();
 
-// v1.0.9 startup preload: chapter script is already parsed before this runs.
-// Preload visual assets referenced by the game before allowing play.
-async function preloadCryptoLife(){
+// v1.0.13 startup: opening splash -> current chapter preload -> start.
+// Do not preload every asset in the whole game. Each chapter declares only what it needs.
+const CHAPTER_PRELOAD={
+ prologue_wallet:[
+  ASSETS.bg.home,ASSETS.bg.townDay,ASSETS.bg.wallet,
+  ASSETS.char.heroNormal,ASSETS.char.heroSmile,ASSETS.char.heroThink,
+  ASSETS.char.heroSurprise,ASSETS.char.walletOwner,ASSETS.char.kuroppy
+ ]
+};
+function wait(ms){return new Promise(r=>setTimeout(r,ms))}
+async function playOpeningSplash(){
+ const splash=document.getElementById('openingSplash');
+ const boot=document.getElementById('bootLoader');
+ splash.classList.add('show');
+ await wait(3000); // 1.8s fade-in + about 1.2s hold
+ splash.classList.add('fadeout');
+ await wait(1600);
+ splash.remove();
+ boot.classList.add('show');
+}
+async function preloadCryptoLife(chapter='prologue_wallet'){
  const loader=document.getElementById('bootLoader');
  const bar=document.getElementById('bootProgress');
+ const mascot=document.getElementById('bootMascot');
  const status=document.getElementById('bootStatus');
  const start=document.getElementById('bootStart');
-
- const urls=new Set();
- document.querySelectorAll('img[src]').forEach(img=>urls.add(img.getAttribute('src')));
-
- // Also collect local image paths written directly in HTML/JS strings.
- const source=document.documentElement.innerHTML;
- const rx=/assets\/(?:backgrounds|characters)\/[A-Za-z0-9_.\-]+\.(?:webp|png|jpe?g|gif)/gi;
- (source.match(rx)||[]).forEach(u=>urls.add(u));
-
- const list=[...urls].filter(Boolean);
+ const list=[...new Set(CHAPTER_PRELOAD[chapter]||[])].filter(Boolean);
  let done=0;
  const total=Math.max(1,list.length);
-
- function paint(msg){
+ function paint(){
    const pct=Math.round((done/total)*100);
    bar.style.width=pct+'%';
-   status.textContent=msg+' '+pct+'%';
+   mascot.style.left=pct+'%';
+   status.textContent=done>=total?'準備完了':'現在の章を読み込んでいます... '+pct+'%';
  }
-
- paint('画像を読み込んでいます...');
- await Promise.all(list.map(url=>new Promise(resolve=>{
-   const im=new Image();
-   const finish=()=>{done++;paint('画像を読み込んでいます...');resolve()};
-   im.onload=finish;
-   im.onerror=finish; // missing optional asset must not deadlock startup
-   im.src=url;
-   if(im.complete) setTimeout(finish,0);
- })));
-
- // Give layout/fonts/chapter registration one frame to settle.
+ paint();
+ for(const url of list){
+   await new Promise(resolve=>{
+     const im=new Image();
+     let finished=false;
+     const finish=()=>{if(finished)return;finished=true;done++;paint();resolve()};
+     im.onload=finish;
+     im.onerror=finish;
+     im.src=url;
+     if(im.complete)setTimeout(finish,0);
+   });
+ }
  await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
- bar.style.width='100%';
- status.textContent='準備完了';
- loader.classList.add('ready');
- start.disabled=false;
+ bar.style.width='100%';mascot.style.left='100%';status.textContent='準備完了';
+ loader.classList.add('ready');start.disabled=false;
  start.onclick=()=>{
    lockDialogueInput(180);
    loader.remove();
+   document.body.classList.remove('boot-sequence');
  };
 }
-
-window.addEventListener('load',()=>{
- preloadCryptoLife().catch(err=>{
-   console.error('preload failed',err);
+window.addEventListener('load',async()=>{
+ try{
+   await playOpeningSplash();
+   await preloadCryptoLife('prologue_wallet');
+ }catch(err){
+   console.error('startup failed',err);
+   document.getElementById('openingSplash')?.remove();
+   const loader=document.getElementById('bootLoader');
    const status=document.getElementById('bootStatus');
    const start=document.getElementById('bootStart');
+   loader?.classList.add('show','ready');
    if(status)status.textContent='準備完了（一部の読み込みをスキップしました）';
-   if(start){
-     start.disabled=false;
-     start.onclick=()=>document.getElementById('bootLoader')?.remove();
-   }
- });
+   if(start){start.disabled=false;start.onclick=()=>{
+     loader?.remove();
+     document.body.classList.remove('boot-sequence');
+   }}
+ }
 });
-
 </script>
 <script src="chapters/prologue_wallet.js"></script>
 </body></html>
