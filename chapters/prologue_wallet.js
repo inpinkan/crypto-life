@@ -1,7 +1,16 @@
-// CRYPTO LIFE v1.0.10
+// CRYPTO LIFE v1.0.22
 // 序章〜Wallet編。物語・会話をHTML本体から分離し、今後「JPYC編」「NFT編」などを追加できる構成。
 function begin(){refresh();startAudio();s.history=[];if(s.chapter===0)go(homeIntro);else go(resume)}
-function resume(){s.walletPrepared?afterWallet():townArrival()}
+function resume(){
+ if((s.completedChapters||[]).includes('security'))return securityComplete();
+ if((s.completedChapters||[]).includes('meeting'))return securityStart();
+ if((s.completedChapters||[]).includes('jpyc')){
+  if(!s.jpycExchangeLinkReviewed)return jpycExchangeLinkReview();
+  return meetingStart();
+ }
+ if((s.completedChapters||[]).includes('wallet'))return jpycStart();
+ s.walletPrepared?afterWallet():townArrival()
+}
 
 function homeIntro(){
  scene('home','heroThink',null,'left','Crypto Townへ行ってみよう');
@@ -170,6 +179,15 @@ function afterLogReview(){
 }
 
 function walletChapterComplete(){
+ if(replay?.active&&replay.chapter==='wallet'){
+  scene('townDay','heroSmile','kuroppy','right','Wallet編 REPLAY COMPLETE');
+  dialogue([
+   ['クロピー','「Wallet編の復習はここまで！ 必要になった時は、LOGの ↻ からまた最初に戻れるよ。」'],
+   [s.name,'「一度聞いた話でも、もう一回やると見え方が変わるな。」'],
+   ['クロピー','「じゃあ、本編の続きへ戻ろう！」']
+  ],[['最新の進行へ戻る',finishChapterReplay]]);
+  return;
+ }
  if(!Array.isArray(s.completedChapters))s.completedChapters=[];
  if(!s.completedChapters.includes('wallet'))s.completedChapters.push('wallet');
  s.chapter=2;
@@ -184,8 +202,8 @@ function walletChapterComplete(){
   ['クロピー','「そこ、次の編でちゃんと整理しよう。JPYCと暗号資産は何が違うのか、JPYCはどこで手に入れるのか、“取引所で買うものなの？”って疑問も順番に見ていくよ。」'],
   [s.name,'「おすすめの取引所とかも、そのうち分かる？」'],
   ['クロピー','「うん。ただし“おすすめ”は人によって変わるし、サービスの取扱状況も変わるから、名前だけで決めないこと。次の編では、まず取引所ってそもそも何をする場所なのかから比べよう。」'],
-  ['クロピー','「その前に、ここまでの進行を保存しておこう！ 画面右上のSAVEを押してね。保存できたらWallet編は一区切り。次回は――JPYC編！」']
- ],[]);
+  ['クロピー','「その前に、ここまでの進行を保存しておこう！ 画面右上のSAVEを押してね。保存できたらWallet編は一区切り。次は――JPYC編！」']
+ ],[['JPYC編へ進む',jpycStart]]);
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
  const dialog=document.querySelector('#dialogBox');
  if(dialog && !document.querySelector('#walletCompleteNote')){

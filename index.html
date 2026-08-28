@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#08101f">
-<title>CRYPTO LIFE v1.0.13</title>
+<title>CRYPTO LIFE v1.0.25</title>
 <style>
-:root{--bg:#070b14;--panel:#10182a;--panel2:#16223a;--line:#53698e;--text:#f4f7ff;--muted:#a9b5ca;--accent:#f2c64f;--good:#72e6ad;--warn:#ffd27c;--blue:#5eb8ff}*{box-sizing:border-box}html,body{margin:0;background:#050913;color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans JP",monospace}body{min-height:100dvh;display:flex;justify-content:center}button,input{font:inherit}button{cursor:pointer;color:inherit}#app{width:min(100%,620px);min-height:100dvh;background:linear-gradient(#08101f,#0a1324);overflow:hidden}.screen{display:none;min-height:100dvh}.screen.active{display:flex;flex-direction:column}.pixel{border:2px solid #7285aa;box-shadow:inset 0 0 0 2px #253551;background:#10192c}.title{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(#061020aa,#061020e8),url('assets/backgrounds/town_night.webp') center/cover}.logo{font-size:clamp(34px,10vw,58px);font-weight:1000;letter-spacing:.08em;text-align:center;text-shadow:3px 3px 0 #294a75,6px 6px 0 #04070d}.sub{margin:8px 0 28px;color:#d8e5ff;text-align:center}.ver,.small{font-size:11px;color:var(--muted)}.menu{width:min(390px,94%);padding:14px;background:#091221e8}.btn,.menu button,.choice{width:100%;padding:13px 12px;margin:5px 0;background:#1a2b49;border:2px solid #7086ad;border-radius:3px;font-weight:800;text-align:left}.menu button:disabled{opacity:.35}.top{min-height:48px;padding:7px 10px;display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:2px solid #263755;background:#0b1425}.top-actions{display:flex;gap:6px}.top-actions button{padding:6px 8px;background:#162744;border:1px solid #667da5;font-size:11px}.main{padding:10px 10px 86px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}.stat{background:#111c30;border:1px solid #40557c;padding:7px 4px;text-align:center}.stat b{display:block;font-size:16px}.stat small{font-size:8px;color:var(--muted)}.xp-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}.progress{flex:1;height:9px;background:#080e1b;border:1px solid #465b80;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#e5b83e,#ffe07f)}.scene{position:relative;aspect-ratio:16/9;overflow:hidden;margin:8px 0;background:#0d1727}.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06101a2b,transparent 28%,transparent 72%,#06101a2b);pointer-events:none}.char{position:absolute;bottom:-4%;height:92%;max-width:52%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 4px 6px #0008);transition:filter .15s}.char.left{left:-2%}.char.right{right:-2%;transform:scaleX(-1)}.char.dim{filter:brightness(.82) drop-shadow(0 4px 6px #0008)}.char.hidden{display:none}.quest{position:absolute;right:8px;top:8px;z-index:4;max-width:46%;padding:6px 8px;background:#071225dc;border:1px solid #607aa5;font-size:9px;line-height:1.45}.quest b{color:var(--accent)}.dialog{padding:12px 13px;margin-bottom:8px;min-height:128px}.speaker{display:inline-block;color:var(--accent);font-weight:900;margin-bottom:7px}.dialog p{margin:0;line-height:1.8;font-size:14px;min-height:3.6em}.dialog-next{float:right;margin-top:5px;font-size:18px;color:var(--accent);animation:blink 1s steps(2,end) infinite}.dialog-next.hidden{visibility:hidden}.dialog-controls{display:flex;gap:6px;margin-top:8px}.mini{padding:7px 9px;background:#142440;border:1px solid #53698e;font-size:10px}.mini:disabled{opacity:.35}.logrow{width:100%;display:flex;justify-content:space-between;gap:8px;padding:9px;margin:5px 0;background:#121f35;border:1px solid #40557c;color:#fff;text-align:left}.logrow.locked{opacity:.55}.lognum{color:var(--accent);font-weight:900}.logdetail{margin-top:8px;padding:10px;border:1px solid #40557c;background:#0c1628}.lognav{display:flex;justify-content:space-between;gap:6px;margin-top:10px}@keyframes blink{50%{opacity:.25}}.choices{display:grid;gap:6px;margin-top:10px}.choice{margin:0;background:#192a48}.choice:hover{background:#223a61}.card{background:#101a2d;border:1px solid #34496d;padding:11px;margin-bottom:8px}.card h3{margin:0 0 8px;font-size:14px;color:#e8eeff}.card p{margin:5px 0;line-height:1.6;font-size:12px;color:#dce5fa}.nav{position:fixed;bottom:0;width:min(100%,620px);display:grid;grid-template-columns:repeat(4,1fr);background:#0b1322;border-top:2px solid #304565;padding-bottom:env(safe-area-inset-bottom);z-index:8}.nav button{border:0;background:transparent;color:#aab6d0;padding:10px 4px;font-size:10px}.nav button.active{color:#fff;background:#192842}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{width:min(480px,100%);max-height:85dvh;overflow:auto;padding:16px}.close{float:right;background:#253a60;border:2px solid #6b7ea7;color:white;padding:6px 9px}input{width:100%;padding:13px;background:#0c1425;border:2px solid #61749c;color:white;margin:8px 0 14px}.badge{display:inline-block;padding:7px 8px;border:1px solid #7287b2;font-size:10px;margin:3px}.itemcard{padding:10px;margin:7px 0;border:1px solid #40557c;background:#0c1628}.itemcard b{color:#fff}.itemcard p{margin:5px 0}.itemlink{display:inline-block;margin-top:5px;padding:7px 9px;border:1px solid #607aa5;background:#172945;color:#fff;text-decoration:none}.iconpick{display:inline-block;width:auto!important;margin:3px!important;padding:8px!important}.iconpick.selected{border-color:var(--accent);color:var(--accent)}.good{color:var(--good)}.warn{color:var(--warn)}.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#eef3ff;color:#0c1221;padding:10px 13px;border:3px solid #273b63;display:none;width:min(90%,440px);font-weight:800;z-index:30}.toast.show{display:block}@media(max-width:420px){.main{padding-left:7px;padding-right:7px}.dialog p{font-size:13px}.char{height:88%}.quest{font-size:8px}.status{gap:3px}.stat{padding:6px 2px}.top{padding:6px 7px}}@media(min-width:800px){body{padding:18px 0}#app{min-height:calc(100dvh - 36px);border:3px solid #263a59;box-shadow:0 0 0 4px #0b1423,0 20px 80px #000}.screen,.title{min-height:calc(100dvh - 36px)}}
+:root{--bg:#070b14;--panel:#10182a;--panel2:#16223a;--line:#53698e;--text:#f4f7ff;--muted:#a9b5ca;--accent:#f2c64f;--good:#72e6ad;--warn:#ffd27c;--blue:#5eb8ff}*{box-sizing:border-box}html,body{margin:0;background:#050913;color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans JP",monospace}body{min-height:100dvh;display:flex;justify-content:center}button,input{font:inherit}button{cursor:pointer;color:inherit}#app{width:min(100%,620px);min-height:100dvh;background:linear-gradient(#08101f,#0a1324);overflow:hidden}.screen{display:none;min-height:100dvh}.screen.active{display:flex;flex-direction:column}.pixel{border:2px solid #7285aa;box-shadow:inset 0 0 0 2px #253551;background:#10192c}.title{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(#061020aa,#061020e8),url('assets/backgrounds/town_night.webp') center/cover}.logo{font-size:clamp(34px,10vw,58px);font-weight:1000;letter-spacing:.08em;text-align:center;text-shadow:3px 3px 0 #294a75,6px 6px 0 #04070d}.sub{margin:8px 0 28px;color:#d8e5ff;text-align:center}.ver,.small{font-size:11px;color:var(--muted)}.menu{width:min(390px,94%);padding:14px;background:#091221e8}.btn,.menu button,.choice{width:100%;padding:13px 12px;margin:5px 0;background:#1a2b49;border:2px solid #7086ad;border-radius:3px;font-weight:800;text-align:left}.menu button:disabled{opacity:.35}.top{min-height:48px;padding:7px 10px;display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:2px solid #263755;background:#0b1425}.top-actions{display:flex;gap:6px}.top-actions button{padding:6px 8px;background:#162744;border:1px solid #667da5;font-size:11px}.main{padding:10px 10px 86px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}.stat{background:#111c30;border:1px solid #40557c;padding:7px 4px;text-align:center}.stat b{display:block;font-size:16px}.stat small{font-size:8px;color:var(--muted)}.xp-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}.progress{flex:1;height:9px;background:#080e1b;border:1px solid #465b80;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#e5b83e,#ffe07f)}.scene{position:relative;aspect-ratio:16/9;overflow:hidden;margin:8px 0;background:#0d1727}.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06101a2b,transparent 28%,transparent 72%,#06101a2b);pointer-events:none}.char{position:absolute;bottom:-4%;height:92%;max-width:52%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 4px 6px #0008);transition:filter .15s}.char.left{left:-2%}.char.right{right:-2%;transform:scaleX(-1)}.char.center{left:50%;transform:translateX(-50%);height:62%;max-width:30%;z-index:3;bottom:-2%}.scene.three .char.left,.scene.three .char.right{height:86%;max-width:43%}.scene.three .char.left{left:-7%}.scene.three .char.right{right:-7%}.char.dim{filter:brightness(.82) drop-shadow(0 4px 6px #0008)}.char.hidden{display:none}.quest{position:absolute;right:8px;top:8px;z-index:4;max-width:46%;padding:6px 8px;background:#071225dc;border:1px solid #607aa5;font-size:9px;line-height:1.45}.quest b{color:var(--accent)}.dialog{padding:12px 13px;margin-bottom:8px;min-height:128px}.speaker{display:inline-block;color:var(--accent);font-weight:900;margin-bottom:7px}.dialog p{margin:0;line-height:1.8;font-size:14px;min-height:3.6em}.dialog-next{float:right;margin-top:5px;font-size:18px;color:var(--accent);animation:blink 1s steps(2,end) infinite}.dialog-next.hidden{visibility:hidden}.dialog-controls{display:flex;gap:6px;margin-top:8px}.mini{padding:7px 9px;background:#142440;border:1px solid #53698e;font-size:10px}.mini:disabled{opacity:.35}.logrow{width:100%;display:flex;justify-content:space-between;gap:8px;padding:9px;margin:5px 0;background:#121f35;border:1px solid #40557c;color:#fff;text-align:left}.logrow.locked{opacity:.55}.lognum{color:var(--accent);font-weight:900}.logdetail{margin-top:8px;padding:10px;border:1px solid #40557c;background:#0c1628}.lognav{display:flex;justify-content:space-between;gap:6px;margin-top:10px}.replay-mark{color:var(--accent);font-weight:1000;margin-left:8px}.replay-start{margin-top:10px;border-color:var(--accent);background:#2a2515}.replay-status{margin:8px 0;padding:8px 10px;border:1px solid #8b7938;background:#18180e;color:#fff4c0;font-size:10px}.replay-exit{display:none}.replay-exit.show{display:inline-block}@keyframes blink{50%{opacity:.25}}.choices{display:grid;gap:6px;margin-top:10px}.choice{margin:0;background:#192a48}.choice:hover{background:#223a61}.card{background:#101a2d;border:1px solid #34496d;padding:11px;margin-bottom:8px}.card h3{margin:0 0 8px;font-size:14px;color:#e8eeff}.card p{margin:5px 0;line-height:1.6;font-size:12px;color:#dce5fa}.nav{position:fixed;bottom:0;width:min(100%,620px);display:grid;grid-template-columns:repeat(4,1fr);background:#0b1322;border-top:2px solid #304565;padding-bottom:env(safe-area-inset-bottom);z-index:8}.nav button{border:0;background:transparent;color:#aab6d0;padding:10px 4px;font-size:10px}.nav button.active{color:#fff;background:#192842}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{width:min(480px,100%);max-height:85dvh;overflow:auto;padding:16px}.close{float:right;background:#253a60;border:2px solid #6b7ea7;color:white;padding:6px 9px}input{width:100%;padding:13px;background:#0c1425;border:2px solid #61749c;color:white;margin:8px 0 14px}.badge{display:inline-block;padding:7px 8px;border:1px solid #7287b2;font-size:10px;margin:3px}.itemcard{padding:10px;margin:7px 0;border:1px solid #40557c;background:#0c1628}.itemcard b{color:#fff}.itemcard p{margin:5px 0}.itemlink{display:inline-block;margin-top:5px;padding:7px 9px;border:1px solid #607aa5;background:#172945;color:#fff;text-decoration:none}.iconpick{display:inline-block;width:auto!important;margin:3px!important;padding:8px!important}.iconpick.selected{border-color:var(--accent);color:var(--accent)}.good{color:var(--good)}.warn{color:var(--warn)}.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#eef3ff;color:#0c1221;padding:10px 13px;border:3px solid #273b63;display:none;width:min(90%,440px);font-weight:800;z-index:30}.toast.show{display:block}@media(max-width:420px){.main{padding-left:7px;padding-right:7px}.dialog p{font-size:13px}.char{height:88%}.quest{font-size:8px}.status{gap:3px}.stat{padding:6px 2px}.top{padding:6px 7px}}@media(min-width:800px){body{padding:18px 0}#app{min-height:calc(100dvh - 36px);border:3px solid #263a59;box-shadow:0 0 0 4px #0b1423,0 20px 80px #000}.screen,.title{min-height:calc(100dvh - 36px)}}
 
 #openingSplash{position:fixed;inset:0;z-index:100000;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 1.8s ease;pointer-events:none}
 #openingSplash.show{opacity:1}
@@ -49,7 +49,7 @@
 }
 
 
-/* v1.0.13: opening -> blank -> loading are independent from the game start screen */
+/* v1.0.15: opening -> blank -> loading remain independent from the game start screen */
 body.boot-sequence{background:#000!important}
 body.boot-sequence #app{
   visibility:hidden!important;
@@ -80,22 +80,23 @@ body.boot-sequence #app{
 </div>
 
 <div id="app">
-<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.13</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
+<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.25</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
 <section id="gameScreen" class="screen">
-<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.13</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
+<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.25</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
 <main class="main">
 <div class="status"><div class="stat"><b id="lv">1</b><small>LEVEL</small></div><div class="stat"><b id="kn">0</b><small>KNOWLEDGE</small></div><div class="stat"><b id="ex">0</b><small>EXPERIENCE</small></div><div class="stat"><b id="se">0</b><small>SECURITY</small></div></div>
 <div class="xp-row"><div class="progress"><i id="bar" style="width:0"></i></div><span class="small">EXP <span id="xp">0</span>/<span id="need">100</span></span></div>
-<div class="scene pixel"><img id="sceneBg" class="scene-bg" alt=""><img id="leftChar" class="char left hidden" alt=""><img id="rightChar" class="char right hidden" alt=""><div class="quest"><b>現在の目標</b><br><span id="quest">Crypto Townを見てみよう</span></div></div>
-<div class="dialog pixel" id="dialogBox"><div id="speaker" class="speaker">SYSTEM</div><p id="text"></p><div id="nextMark" class="dialog-next hidden">▽</div><div style="clear:both"></div><div id="choices" class="choices"></div><div class="dialog-controls"><button id="backScene" class="mini">◀ ひとつ前へ</button><button id="endTalk" class="mini">会話をやり直す</button></div></div>
-<div id="home" class="panel card"><h3>今日の状態</h3><p>主人公：<b id="nameLabel">---</b></p><p>称号：<span id="rank">はじめの一歩</span></p><p>ゲーム内通貨：<b><span id="gold">500</span> G</b></p><p>Wallet：<span id="wallet">未準備</span></p></div>
+<div class="scene pixel"><img id="sceneBg" class="scene-bg" alt=""><img id="leftChar" class="char left hidden" alt=""><img id="centerChar" class="char center hidden" alt=""><img id="rightChar" class="char right hidden" alt=""><div class="quest"><b>現在の目標</b><br><span id="quest">Crypto Townを見てみよう</span></div></div>
+<div class="dialog pixel" id="dialogBox"><div id="speaker" class="speaker">SYSTEM</div><p id="text"></p><div id="nextMark" class="dialog-next hidden">▽</div><div style="clear:both"></div><div id="choices" class="choices"></div><div class="dialog-controls"><button id="backScene" class="mini">◀ ひとつ前へ</button><button id="endTalk" class="mini">会話をやり直す</button><button id="exitReplay" class="mini replay-exit">↩ 再プレイ終了</button></div></div>
+<div id="home" class="panel card"><h3>今日の状態</h3><p>主人公：<b id="nameLabel">---</b></p><p>PLAYER ID：<b id="homeGameId">---</b> <button id="copyHomeGameId" class="btn">COPY</button></p><p>称号：<span id="rank">はじめの一歩</span></p><p>ゲーム内通貨：<b><span id="gold">500</span> G</b></p><p>Wallet：<span id="wallet">未準備</span></p></div>
 <div id="growth" class="panel card" style="display:none"><h3>できるようになったこと</h3><div id="skills"></div></div>
 <div id="item" class="panel card" style="display:none"><h3>ITEM</h3><p class="small">物語で手に入れた持ち物と、Web3を実際に体験するための公式リンクを確認できます。</p><div id="items"></div></div>
-<div id="log" class="panel card" style="display:none"><h3>WEB3 LEARNING LOG</h3><p class="small">学んだ内容を番号順に記録します。番号が飛んでいれば、まだ体験していない学習があります。取得済みLOGを押すと、意味や注意点まで詳しく復習できます。</p><div id="logs"></div><div id="logDetail"></div><button id="returnFromLog" class="btn" style="display:none;margin-top:10px">▶ 会話へ戻る</button></div>
+<div id="log" class="panel card" style="display:none"><h3>WEB3 LEARNING LOG</h3><p class="small">学んだ内容を番号順に記録します。番号が飛んでいれば、まだ体験していない学習があります。取得済みLOGを押すと、意味や注意点まで詳しく復習できます。↻ が付いたLOGからは、その編を最初から再プレイできます。</p><div id="logs"></div><div id="logDetail"></div><button id="returnFromLog" class="btn" style="display:none;margin-top:10px">▶ 会話へ戻る</button></div>
 </main>
 <nav class="nav"><button data-p="home" class="active">HOME</button><button data-p="growth">GROWTH</button><button data-p="item">ITEM</button><button data-p="log">LOG</button></nav>
 </section></div>
 <div id="nameModal" class="modal"><div class="modalbox pixel"><h2>NEW GAME</h2><p>主人公の名前を決めてください。</p><input id="playerName" maxlength="12" placeholder="名前"><button id="start" class="btn">ゲームを始める</button></div></div>
+<div id="bookModal" class="modal"><div class="modalbox pixel"><button class="close" data-close="bookModal">×</button><h2>📘 はじめてのWeb3</h2><p class="small">本屋で買った入門書。これまで体験した内容を、豆知識とクイズで復習できます。</p><div id="bookContent"></div></div></div>
 <div id="settingsModal" class="modal"><div class="modalbox pixel"><button class="close" data-close="settingsModal">×</button><h2>SETTINGS</h2><p class="small">プレイヤー情報とゲーム設定を変更できます。</p><h3>プレイヤー名</h3><input id="settingsName" maxlength="12" placeholder="名前"><button id="renamePlayer" class="btn">名前を変更</button><h3>プレイヤーアイコン</h3><div id="iconChoices"></div><h3>GAME ID</h3><p><b id="gameIdLabel">---</b></p><p class="small">このゲームを始めた時に発行される、この端末のプレイヤーIDです。Giveawayやイベントなどでプレイヤーを識別する用途へ発展できる仕組みです。現段階では端末内に保存されるため、別端末への引き継ぎを保証するIDではありません。</p><button id="copyGameId" class="btn">GAME IDをコピー</button><button id="settingsSound" class="btn">サウンド ON / OFF</button><button id="resetSave" class="btn">セーブデータを初期化</button></div></div>
 <div id="toast" class="toast"></div>
 <script>
@@ -110,7 +111,7 @@ function lockDialogueInput(ms=110){
 // ===== ASSET CATALOG：画像参照はここに集約 =====
 const ASSETS={
   bg:{home:'assets/backgrounds/home.webp',townDay:'assets/backgrounds/town_day.webp',townNight:'assets/backgrounds/town_night.webp',wallet:'assets/backgrounds/wallet_shop.webp',book:'assets/backgrounds/bookshop.webp',hacker:'assets/backgrounds/hacker_room.webp'},
-  char:{heroNormal:'assets/characters/hero_normal.webp',heroSmile:'assets/characters/hero_smile.webp',heroReady:'assets/characters/hero_ready.webp',heroThink:'assets/characters/hero_think.webp',heroSurprise:'assets/characters/hero_surprise.webp',walletOwner:'assets/characters/wallet_owner.webp',keita:'assets/characters/keita.webp',uncle:'assets/characters/uncle.webp',oldMan:'assets/characters/old_man.webp',scammer:'assets/characters/scammer.webp',consultant:'assets/characters/consultant.webp',hacker:'assets/characters/hacker.webp',kuroppy:'assets/characters/kuroppy.webp'}
+  char:{heroNormal:'assets/characters/hero_normal.webp',heroSmile:'assets/characters/hero_smile.webp',heroReady:'assets/characters/hero_ready.webp',heroThink:'assets/characters/hero_think.webp',heroSurprise:'assets/characters/hero_surprise.webp',walletOwner:'assets/characters/wallet_owner.webp',keita:'assets/characters/keita.webp',uncle:'assets/characters/uncle.webp',oldMan:'assets/characters/old_man.webp',scammer:'assets/characters/scammer.webp',consultant:'assets/characters/consultant.webp',heroine:'assets/characters/heroine.webp',hacker:'assets/characters/hacker.webp',kuroppy:'assets/characters/kuroppy.webp'}
 };
 const LOGS=[
  {id:1,title:'Crypto Townへ来た',body:'Crypto Townには、BOOKのようにすぐ意味が分かる言葉もあれば、Wallet・NFT・JNCのように初めて見る言葉もある。分からない言葉を一度に暗記する必要はない。気になった場所へ行き、人に聞き、実際に触りながら少しずつ理解していくのがこのゲームの基本だ。'},
@@ -119,32 +120,59 @@ const LOGS=[
  {id:4,title:'秘密情報は渡さない',body:'秘密鍵やリカバリーフレーズは、資産を動かす権限につながる非常に重要な秘密情報。Addressのように人へ教えるものではない。CRYPTO LIFEが入力を求めることもない。将来自己管理型Walletを体験する時には、スクリーンショットを避ける理由や安全な記録・保管方法も学ぶ。'},
  {id:5,title:'HashPort Walletに興味を持った',body:'序盤の実習ではHashPort Walletを候補として体験する。最初から秘密鍵やリカバリーフレーズを自分で管理する形ではないため、まずWalletの基本操作やAddress、受け取り・利用の流れへ集中しやすい。普段使うWalletをこれだけに限定するという意味ではない。'},
  {id:6,title:'HashPort Walletを準備した',body:'最初のWalletを準備する段階まで進んだ。次は自分のAddressを確認し、JPYCを受け取る準備へ進む。Walletを作ること自体がゴールではなく、何を確認し、どう安全に使うかを経験していくことが目的。'},
- {id:7,title:'JPYCを知る',body:'まだ学習していない。JPYCが何なのか、ゲーム内通貨Gとどう違うのかを今後のストーリーで学ぶ。'},
- {id:8,title:'JPYCを受け取る',body:'まだ学習していない。WalletのAddressを使い、実際にJPYCを受け取る体験へ進む予定。'},
- {id:9,title:'JPYCを使う',body:'まだ学習していない。受け取ったJPYCを実際に利用し、取引がブロックチェーン上でどう記録されるかへ学習を広げる予定。'},
+ {id:7,title:'JPYC編を始めた',body:'JPYCは日本円と1:1で価値が連動するように設計された日本円建てステーブルコイン。JPYC編では、JPYCそのものだけでなく、Ethereum・Polygon・Avalancheの3チェーン、ガス代、取引所、Walletへの送金までを一つの流れとして学ぶ。実際にお金を使う場面があるため、最初に全体の道筋と目安金額を確認してから進む。'},
+ {id:8,title:'JPYC（Polygon）をWalletで確認した',body:'JPYC EXでPolygon版JPYCを発行し、Wallet側で確認する流れを学んだ。同じJPYCでも、どのチェーン上にあるかが重要。今回はPolygon版なので、トークンのチェーン表示と、Polygonを動かす手数料用通貨POLをセットで確認する。'},
+ {id:9,title:'チェーンとガス代がつながった',body:'トークンを送るには、Addressだけでなくネットワーク／チェーンを確認する。EthereumではETH、PolygonではPOL、AvalancheではAVAXなど、基本的にそのチェーンのネイティブ通貨がガス代に使われる。ガスレス対応サービスでは利用者が直接負担しない場合もあるが、本来のチェーン手数料の仕組みを知っておくことが大切。'},
+ {id:11,title:'本屋で女の子と出会った',body:'Crypto Townの本屋で、Web3の本を読んでいる女の子と出会った。彼女は分からないことがあると本で調べるタイプらしい。本はメインストーリーで全部を説明しなくても、豆知識や初級クイズで自分のペースで復習できる場所になりそうだ。'},
+ {id:12,title:'秘密鍵を狙う詐欺に遭遇した',body:'Walletのトラブルを装い、秘密鍵やリカバリーフレーズなどの秘密情報を聞き出そうとする手口がある。急がせる、不安をあおる、公式サポートを名乗るといった演出があっても、秘密情報を相手へ渡さない。'},
+ {id:13,title:'秘密鍵がないWalletでも油断しない',body:'今回使っているHashPort Walletは、ユーザーが秘密鍵やリカバリーフレーズを直接管理する方式ではないため、「秘密鍵を教えて」という要求自体がおかしいと気づけた。ただし、偽サイト、認証情報の窃取、危険な操作を誘導する詐欺など別の手口まで無くなるわけではない。'},
  {id:10,title:'MetaMaskと自己管理',body:'中盤以降で学習予定。自己管理型Walletではリカバリーフレーズ等の管理が重要になる。記録方法、スクリーンショットを避ける理由、誰にも渡さないことを実習と会話で確認する。'}
 ];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const KEY='cryptolife_v110',OLDKEYS=['cryptolife_v106','cryptolife_v105','cryptolife_v102','cryptolife_v101','cryptolife_v100'];
 const makeGameId=()=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',part=n=>Array.from({length:n},()=>c[Math.floor(Math.random()*c.length)]).join('');return 'CL-'+part(4)+'-'+part(4)};
-const fresh=()=>({name:'',gameId:makeGameId(),icon:'🙂',level:1,xp:0,knowledge:0,experience:0,security:0,gold:500,walletPrepared:false,addressLesson:false,chapter:0,completedChapters:[],day:1,items:[{type:'normal',name:'古いスマートフォン',desc:'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。'}],skills:[['Walletの役割を知る',false],['Addressの意味を知る',false],['秘密情報を守る',false],['HashPort Walletを準備する',false],['JPYCを送受信する',false]],logs:[],met:{walletOwner:false,kuroppy:false,keita:false},history:[]});
-let s=fresh(),soundOn=true,audio=null,bgmTimer=null,typeTimer=null,currentFlow=null,currentStep=0,currentChoices=[],logReturnFn=null;
+const fresh=()=>({name:'',gameId:makeGameId(),icon:'🙂',level:1,xp:0,knowledge:0,experience:0,security:0,gold:500,walletPrepared:false,jpycPrepared:false,polPrepared:false,exchangeChoice:'',addressLesson:false,bookOwned:false,meetingDone:false,securityDone:false,chapter:0,completedChapters:[],day:1,items:[{type:'normal',name:'古いスマートフォン',desc:'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。'}],skills:[['Walletの役割を知る',false],['Addressの意味を知る',false],['秘密情報を守る',false],['HashPort Walletを準備する',false],['JPYCを送受信する',false]],logs:[],met:{walletOwner:false,kuroppy:false,keita:false},history:[]});
+let s=fresh(),soundOn=true,audio=null,bgmTimer=null,typeTimer=null,currentFlow=null,currentStep=0,currentChoices=[],logReturnFn=null,replay=null;
 function has(){return!!([KEY,...OLDKEYS].some(k=>localStorage.getItem(k)))}
-function save(q=false){localStorage.setItem(KEY,JSON.stringify(s));if(!q)toast('セーブしました。');refresh()}
-function load(){try{let raw=localStorage.getItem(KEY);if(!raw)for(const k of OLDKEYS){raw=localStorage.getItem(k);if(raw)break}if(raw){const v=JSON.parse(raw);s=Object.assign(fresh(),v);s.met=Object.assign(fresh().met,v.met||{});if(!Array.isArray(s.completedChapters))s.completedChapters=[];if(!s.gameId)s.gameId=makeGameId();if(!s.icon)s.icon='🙂';if((s.items||[]).some(x=>typeof x==='string'))s.items=s.items.map(x=>({type:'normal',name:x,desc:x==='古いスマートフォン'?'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。':''}));s.items=(s.items||[]).map(x=>x&&x.name==='HashPort Wallet 公式案内'?Object.assign({},x,{type:'link',url:'https://wallet.hashport.com/'}):x);s.history=[];localStorage.setItem(KEY,JSON.stringify(s))}}catch(e){}}
+function save(q=false){if(!q&&!replay?.active)localStorage.setItem(KEY,JSON.stringify(s));if(!q)toast(replay?.active?'再プレイ中は本編セーブを変更しません。':'SAVEしました。');refresh()}
+function load(){try{let raw=localStorage.getItem(KEY);if(!raw)for(const k of OLDKEYS){raw=localStorage.getItem(k);if(raw)break}if(raw){const v=JSON.parse(raw);s=Object.assign(fresh(),v);s.met=Object.assign(fresh().met,v.met||{});if(!Array.isArray(s.completedChapters))s.completedChapters=[];if(!s.gameId)s.gameId=makeGameId();if(!s.icon)s.icon='🙂';if(s.gold===380&&!s.bookOwned&&!(s.items||[]).some(x=>(typeof x==='string'?x:x.name)==='はじめてのWeb3'))s.gold=500;if((s.items||[]).some(x=>typeof x==='string'))s.items=s.items.map(x=>({type:'normal',name:x,desc:x==='古いスマートフォン'?'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。':''}));s.items=(s.items||[]).map(x=>x&&x.name==='HashPort Wallet 公式案内'?Object.assign({},x,{type:'link',url:'https://wallet.hashport.com/'}):x);s.history=[];localStorage.setItem(KEY,JSON.stringify(s))}}catch(e){}}
 function screen(id){$$('.screen').forEach(x=>x.classList.remove('active'));$('#'+id).classList.add('active')}
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1500)}
 function unlockLog(id){if(!s.logs.includes(id)){s.logs.push(id);s.logs.sort((a,b)=>a-b);save(true)}}
 function gain(x,k,e,se,logId){s.xp+=x;s.knowledge+=k;s.experience+=e;s.security+=se;if(logId)unlockLog(logId);let n=s.level*100,l=false;while(s.xp>=n){s.xp-=n;s.level++;n=s.level*100;l=true}save(true);if(l){sfx('level');toast('LEVEL UP！ LV.'+s.level)}else sfx('gain')}
 function rank(){return s.level>=10?'Web3 Explorer':s.level>=7?'Chain Observer':s.level>=5?'Crypto User':s.level>=3?'Wallet User':'はじめの一歩'}
-function refresh(){ $('#cont').disabled=!has(); if(!$('#gameScreen').classList.contains('active'))return;
- $('#lv').textContent=s.level;$('#kn').textContent=s.knowledge;$('#ex').textContent=s.experience;$('#se').textContent=s.security;$('#xp').textContent=s.xp;$('#need').textContent=s.level*100;$('#bar').style.width=Math.min(100,s.xp/(s.level*100)*100)+'%';$('#nameLabel').textContent=s.name;$('#rank').textContent=rank();$('#gold').textContent=s.gold;$('#wallet').innerHTML=s.walletPrepared?'<span class="good">HashPort Wallet 準備済み</span>':'<span class="warn">未準備</span>';$('#skills').innerHTML=s.skills.map(a=>'<p>'+(a[1]?'✓':'□')+' '+a[0]+'</p>').join('');renderItems();renderLogs();}
+function refresh(){ $('#cont').disabled=!has();if(soundOn&&audio)startAudio(); if(!$('#gameScreen').classList.contains('active'))return;
+ updateReplayUi();$('#lv').textContent=s.level;$('#kn').textContent=s.knowledge;$('#ex').textContent=s.experience;$('#se').textContent=s.security;$('#xp').textContent=s.xp;$('#need').textContent=s.level*100;$('#bar').style.width=Math.min(100,s.xp/(s.level*100)*100)+'%';$('#nameLabel').textContent=s.name;$('#homeGameId').textContent=s.gameId||'---';$('#rank').textContent=rank();$('#gold').textContent=s.gold;$('#wallet').innerHTML=s.walletPrepared?'<span class="good">HashPort Wallet 準備済み</span>':'<span class="warn">未準備</span>';$('#skills').innerHTML=s.skills.map(a=>'<p>'+(a[1]?'✓':'□')+' '+a[0]+'</p>').join('');renderItems();renderLogs();}
 
-function renderItems(){const box=$('#items');if(!box)return;box.innerHTML=(s.items||[]).map(x=>{if(typeof x==='string')x={type:'normal',name:x,desc:''};const tag=x.type==='link'?'WEB3 LINK':'ITEM';return `<div class="itemcard"><span class="lognum">${tag}</span><br><b>${x.name}</b><p>${x.desc||''}</p>${x.type==='link'&&x.url?`<a class="itemlink" href="${x.url}" target="_blank" rel="noopener noreferrer">公式サイトを開く</a>`:''}</div>`}).join('')}
+function renderItems(){const box=$('#items');if(!box)return;box.innerHTML=(s.items||[]).map(x=>{if(typeof x==='string')x={type:'normal',name:x,desc:''};const tag=x.type==='link'?'WEB3 LINK':'ITEM';const book=x.name==='はじめてのWeb3'?`<button class="itemlink open-book" type="button">本を開く</button>`:'';return `<div class="itemcard"><span class="lognum">${tag}</span><br><b>${x.name}</b><p>${x.desc||''}</p>${x.type==='link'&&x.url?`<a class="itemlink" href="${x.url}" target="_blank" rel="noopener noreferrer">公式サイトを開く</a>`:''}${book}</div>`}).join('');$$('.open-book').forEach(b=>b.onclick=openWeb3Book)}
+const WEB3_BOOK=[
+ {tip:'Wallet Addressは受取先として共有できる公開情報。秘密鍵やリカバリーフレーズとは別物。',q:'人に教えてはいけないものは？',a:['Wallet Address','秘密鍵・リカバリーフレーズ','チェーン名'],ok:1},
+ {tip:'JPYC（Polygon）を送るときは、Polygon上の手数料を支払うためにPOLが必要。',q:'JPYC（Polygon）の送金手数料に使う通貨は？',a:['POL','JPYC','BTC'],ok:0},
+ {tip:'同じ暗号資産でも複数チェーンに対応することがある。送金前は受取側と送金側のネットワークを合わせる。',q:'送金前にアドレスと一緒に確認するものは？',a:['ネットワーク／チェーン','ニックネーム','画面の色'],ok:0},
+ {tip:'チェーンのネイティブ通貨は、そのチェーン上で取引を動かすガス代として使われる。',q:'ガス代の役割に一番近いものは？',a:['ブロックチェーン上の処理手数料','Walletの月額料金','暗号資産の税金'],ok:0},
+ {tip:'「今すぐ秘密鍵を入力しないと資産が危ない」のように不安を煽る要求は、詐欺を疑う重要なサイン。',q:'知らない相手から秘密鍵を求められたら？',a:['すぐ送る','一部だけ教える','教えず、公式情報を確認する'],ok:2}
+];
+function openWeb3Book(){const c=$('#bookContent');c.innerHTML=WEB3_BOOK.map((x,i)=>`<div class="itemcard"><b>豆知識 ${i+1}</b><p>${x.tip}</p><p><b>Q. ${x.q}</b></p>${x.a.map((a,j)=>`<button class="mini book-answer" data-i="${i}" data-j="${j}" style="margin:3px">${a}</button>`).join('')}<p id="bookResult${i}" class="small"></p></div>`).join('');$$('.book-answer').forEach(b=>b.onclick=()=>{const i=+b.dataset.i,j=+b.dataset.j,r=$('#bookResult'+i);r.textContent=j===WEB3_BOOK[i].ok?'✓ 正解！':'もう一度考えてみよう。';r.className=j===WEB3_BOOK[i].ok?'good':'warn'});$('#bookModal').classList.add('show')}
 function addItem(item){if(!(s.items||[]).some(x=>(typeof x==='string'?x:x.name)===item.name)){s.items.push(item);save(true);toast('ITEM GET！ '+item.name)}}
-function renderLogs(){const box=$('#logs');if(!box)return;box.innerHTML=LOGS.map(l=>{const got=s.logs.includes(l.id);return `<button class="logrow ${got?'':'locked'}" data-log="${l.id}" ${got?'':'disabled'}><span><span class="lognum">LOG ${String(l.id).padStart(3,'0')}</span>　${got?l.title:'？？？'}</span><span>${got?'✓':'---'}</span></button>`}).join('');$$('[data-log]').forEach(b=>b.onclick=()=>openLog(+b.dataset.log))}
-function openLog(id){const i=LOGS.findIndex(x=>x.id===id),l=LOGS[i];if(!l||!s.logs.includes(id))return;const prev=[...LOGS].slice(0,i).reverse().find(x=>s.logs.includes(x.id)),next=LOGS.slice(i+1).find(x=>s.logs.includes(x.id));$('#logDetail').innerHTML=`<div class="logdetail"><b class="lognum">LOG ${String(id).padStart(3,'0')}</b><h3>${l.title}</h3><p>${l.body}</p><div class="lognav"><button class="mini" id="lp" ${prev?'':'disabled'}>◀ ${prev?'LOG '+String(prev.id).padStart(3,'0'):'---'}</button><button class="mini" id="ln" ${next?'':'disabled'}>${next?'LOG '+String(next.id).padStart(3,'0'):'---'} ▶</button></div></div>`;if(prev)$('#lp').onclick=()=>openLog(prev.id);if(next)$('#ln').onclick=()=>openLog(next.id);$('#logDetail').scrollIntoView({behavior:'smooth',block:'nearest'})}
-function scene(bg,left=null,right=null,active='none',quest=''){const B=$('#sceneBg'),L=$('#leftChar'),R=$('#rightChar');B.src=ASSETS.bg[bg]||bg;[[L,left],[R,right]].forEach(([el,key])=>{if(key){el.src=ASSETS.char[key]||key;el.classList.remove('hidden')}else el.classList.add('hidden')});L.classList.toggle('dim',active==='right');R.classList.toggle('dim',active==='left');$('#quest').textContent=quest||'自由に行動しよう'}
+const REPLAY_HEADS={2:{chapter:'wallet',label:'Wallet編'},7:{chapter:'jpyc',label:'JPYC編'},11:{chapter:'meeting',label:'出会い編'},12:{chapter:'security',label:'セキュリティ編'}};
+function canReplayHead(id){const h=REPLAY_HEADS[id];return!!(h&&(s.completedChapters||[]).includes(h.chapter)&&!replay?.active)}
+function renderLogs(){const box=$('#logs');if(!box)return;box.innerHTML=LOGS.map(l=>{const got=s.logs.includes(l.id),head=canReplayHead(l.id);return `<button class="logrow ${got?'':'locked'}" data-log="${l.id}" ${got?'':'disabled'}><span><span class="lognum">LOG ${String(l.id).padStart(3,'0')}</span>${head?'<span class="replay-mark">↻</span>':''}　${got?l.title:'？？？'}</span><span>${got?'✓':'---'}</span></button>`}).join('');$$('[data-log]').forEach(b=>b.onclick=()=>openLog(+b.dataset.log))}
+function openLog(id){const i=LOGS.findIndex(x=>x.id===id),l=LOGS[i];if(!l||!s.logs.includes(id))return;const prev=[...LOGS].slice(0,i).reverse().find(x=>s.logs.includes(x.id)),next=LOGS.slice(i+1).find(x=>s.logs.includes(x.id)),head=REPLAY_HEADS[id],replayButton=canReplayHead(id)?`<button class="btn replay-start" id="startReplay">↻ ${head.label}を最初から再プレイ</button>`:'';$('#logDetail').innerHTML=`<div class="logdetail"><b class="lognum">LOG ${String(id).padStart(3,'0')}</b>${canReplayHead(id)?'<span class="replay-mark">↻ 頭出し</span>':''}<h3>${l.title}</h3><p>${l.body}</p>${replayButton}<div class="lognav"><button class="mini" id="lp" ${prev?'':'disabled'}>◀ ${prev?'LOG '+String(prev.id).padStart(3,'0'):'---'}</button><button class="mini" id="ln" ${next?'':'disabled'}>${next?'LOG '+String(next.id).padStart(3,'0'):'---'} ▶</button></div></div>`;if(prev)$('#lp').onclick=()=>openLog(prev.id);if(next)$('#ln').onclick=()=>openLog(next.id);if($('#startReplay'))$('#startReplay').onclick=()=>startChapterReplay(head.chapter);$('#logDetail').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function startChapterReplay(chapter){
+ if(replay?.active)return;
+ if(!['wallet','jpyc','meeting','security'].includes(chapter))return;
+ const original=JSON.parse(JSON.stringify(s));
+ replay={active:true,chapter,original};
+ s=JSON.parse(JSON.stringify(original));s.history=[];currentFlow=null;currentStep=0;currentChoices=[];logReturnFn=null;
+ showPanel('home');updateReplayUi();
+ if(chapter==='wallet'){s.walletPrepared=false;s.addressLesson=false;s.chapter=1;s.met=Object.assign({},s.met,{walletOwner:false,kuroppy:false});toast('Wallet編を最初から再プレイします。');go(walletDoor,false);return}
+ if(chapter==='jpyc'){s.jpycPrepared=false;s.polPrepared=false;s.exchangeChoice='';s.chapter=2;toast('JPYC編を最初から再プレイします。');go(jpycStart,false);return}
+ if(chapter==='meeting'){s.chapter=3;toast('出会い編を最初から再プレイします。');go(meetingStart,false);return}
+ s.chapter=4;toast('セキュリティ編を最初から再プレイします。');go(securityStart,false);
+}
+function finishChapterReplay(){if(!replay?.active)return;const original=replay.original;replay=null;s=original;s.history=[];currentFlow=null;currentStep=0;currentChoices=[];logReturnFn=null;localStorage.setItem(KEY,JSON.stringify(s));updateReplayUi();refresh();showPanel('home');toast('本編の最新地点へ戻りました。');go(resume,false)}
+function updateReplayUi(){const b=$('#exitReplay');if(b)b.classList.toggle('show',!!replay?.active)}
+function scene(bg,left=null,right=null,active='none',quest='',center=null){const S=document.querySelector('.scene'),B=$('#sceneBg'),L=$('#leftChar'),C=$('#centerChar'),R=$('#rightChar');B.src=ASSETS.bg[bg]||bg;[[L,left],[C,center],[R,right]].forEach(([el,key])=>{if(key){el.src=ASSETS.char[key]||key;el.classList.remove('hidden')}else el.classList.add('hidden')});S.classList.toggle('three',!!center);L.classList.toggle('dim',active==='right'||active==='center');C.classList.toggle('dim',active==='left'||active==='right');R.classList.toggle('dim',active==='left'||active==='center');$('#quest').textContent=quest||'自由に行動しよう'}
 function snapshot(fn){s.history.push(fn);if(s.history.length>30)s.history.shift();$('#backScene').disabled=s.history.length<2}
 function go(fn,push=true){if(push){snapshot(fn);try{history.pushState({cl:true},'','#cl'+s.history.length)}catch(e){}}fn()}
 function back(){clearInterval(typeTimer);if(currentFlow&&currentStep>0){currentStep--;sfx('select');showLine();return}if(s.history.length<2)return;s.history.pop();const fn=s.history[s.history.length-1];fn(false);$('#backScene').disabled=s.history.length<2}
@@ -156,7 +184,50 @@ function finishDialogue(){clearInterval(typeTimer);$('#nextMark').classList.add(
 function intro(name,lines,after){dialogue([[name,lines[0]],[s.name,lines[1]],[name,lines[2]]],after)}
 // ===== STORY CHAPTERS：会話・物語は chapters/ 側へ分離 =====
 function showPanel(id){$$('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.p===id));$$('.panel').forEach(x=>x.style.display='none');$('#'+id).style.display='block';if(id==='log')renderLogs();const r=$('#returnFromLog');if(r)r.style.display=id==='log'&&logReturnFn?'block':'none'}
-function startAudio(){if(!soundOn)return;try{if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();if(!bgmTimer){const notes=[220,277,330,277];let i=0;bgmTimer=setInterval(()=>{if(!soundOn||!audio)return;const o=audio.createOscillator(),g=audio.createGain();o.type='triangle';o.frequency.value=notes[i++%notes.length];g.gain.setValueAtTime(.018,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.32);o.connect(g).connect(audio.destination);o.start();o.stop(audio.currentTime+.33)},620)}}catch(e){}}
+let bgmMode='';
+function storyBgmMode(){
+ if(replay?.chapter==='security'||s.chapter>=4)return 'security';
+ if(replay?.chapter==='meeting'||s.chapter===3)return 'meeting';
+ if(replay?.chapter==='jpyc'||s.chapter===2)return 'jpyc';
+ return 'wallet';
+}
+function startAudio(){
+ if(!soundOn)return;
+ try{
+  if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();
+  if(audio.state==='suspended')audio.resume();
+  const mode=storyBgmMode();
+  if(bgmTimer&&bgmMode===mode)return;
+  if(bgmTimer){clearInterval(bgmTimer);bgmTimer=null}
+  bgmMode=mode;
+  const cfg={
+   wallet:{notes:[220,277,330,277],tempo:620,duration:.32,type:'triangle',gain:.018},
+   jpyc:{notes:[247,311,370,311],tempo:520,duration:.28,type:'triangle',gain:.018},
+   meeting:{notes:[330,415,494,554,494,415],tempo:400,duration:.22,type:'sine',gain:.020},
+   security:{notes:[165,156,147,139],tempo:690,duration:.42,type:'sawtooth',gain:.010}
+  }[mode];
+  let i=0;
+  bgmTimer=setInterval(()=>{
+   if(!soundOn||!audio)return;
+   const o=audio.createOscillator(),g=audio.createGain();
+   o.type=cfg.type;o.frequency.value=cfg.notes[i++%cfg.notes.length];
+   g.gain.setValueAtTime(cfg.gain,audio.currentTime);
+   g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+cfg.duration);
+   o.connect(g).connect(audio.destination);o.start();o.stop(audio.currentTime+cfg.duration+.01)
+  },cfg.tempo);
+ }catch(e){}
+}
+function setStoryBgm(mode){
+ if(!soundOn)return;
+ if(bgmTimer){clearInterval(bgmTimer);bgmTimer=null}
+ bgmMode='';
+ const chapterMap={wallet:1,jpyc:2,meeting:3,security:4};
+ const oldChapter=s.chapter;
+ if(chapterMap[mode])s.chapter=chapterMap[mode];
+ startAudio();
+ s.chapter=oldChapter;
+}
+function stopStoryBgm(){if(bgmTimer){clearInterval(bgmTimer);bgmTimer=null}bgmMode='silent'}
 function sfx(type){if(!soundOn)return;startAudio();if(!audio)return;const o=audio.createOscillator(),g=audio.createGain();o.type=type==='level'?'square':'sine';o.frequency.setValueAtTime(type==='level'?520:340,audio.currentTime);if(type==='level')o.frequency.exponentialRampToValueAtTime(900,audio.currentTime+.18);g.gain.setValueAtTime(.035,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.18);o.connect(g).connect(audio.destination);o.start();o.stop(audio.currentTime+.2)}
 
 function openSettings(){if(!s.gameId)s.gameId=makeGameId();$('#settingsName').value=s.name||'';$('#gameIdLabel').textContent=s.gameId;$('#settingsSound').textContent=soundOn?'♪ サウンド ON':'♪ サウンド OFF';const icons=['🙂','😎','🧢','🦊','💎'];$('#iconChoices').innerHTML=icons.map(i=>`<button class="iconpick ${s.icon===i?'selected':''}" data-icon="${i}">${i}</button>`).join('');$$('[data-icon]').forEach(b=>b.onclick=()=>{s.icon=b.dataset.icon;save(true);openSettings()});$('#settingsModal').classList.add('show')}
@@ -166,18 +237,18 @@ $('#cont').onclick=()=>{load();screen('gameScreen');begin()};
 $('#settings').onclick=openSettings;$('#gameSettings').onclick=openSettings;
 $('#renamePlayer').onclick=()=>{const n=$('#settingsName').value.trim();if(!n)return toast('名前を入力してください。');s.name=n;save(true);toast('名前を変更しました。')};
 $('#copyGameId').onclick=async()=>{try{await navigator.clipboard.writeText(s.gameId);toast('GAME IDをコピーしました。')}catch(e){toast('GAME ID: '+s.gameId)}};
+$('#copyHomeGameId').onclick=async()=>{try{await navigator.clipboard.writeText(s.gameId);toast('PLAYER IDをコピーしました。')}catch(e){toast('PLAYER ID: '+s.gameId)}};
 $('#settingsSound').onclick=()=>{$('#sound').click();openSettings()};
 $('#resetSave').onclick=()=>{if(confirm('セーブデータを初期化します。GAME IDや進行状況も失われます。よろしいですか？')){[KEY,...OLDKEYS].forEach(k=>localStorage.removeItem(k));s=fresh();$('#settingsModal').classList.remove('show');screen('titleScreen');refresh();toast('セーブデータを初期化しました。')}};
 $('#save').onclick=()=>{
- save();
  $('#save').classList.remove('save-guide');
- if((s.completedChapters||[]).includes('wallet')){
-   toast('Wallet編を保存しました。次回はJPYC編へ！');
- }
+ if(replay?.active){toast('再プレイ中は本編セーブを変更しません。');return}
+ save(false);
 };
 $('#sound').onclick=()=>{soundOn=!soundOn;$('#sound').textContent=soundOn?'♪ SOUND ON':'♪ SOUND OFF';if(soundOn)startAudio();else if(audio)audio.suspend()};
 $('#backScene').onclick=back;
 $('#endTalk').onclick=()=>{if(currentFlow){currentStep=0;sfx('select');showLine();}};
+$('#exitReplay').onclick=()=>{if(replay?.active&&confirm('再プレイを終了して、本編の最新地点へ戻りますか？'))finishChapterReplay()};
 $('#dialogBox').onclick=e=>{
  if(e.target.closest('button'))return;
  if(!currentFlow||dialogueInputLocked)return;
@@ -191,13 +262,25 @@ $('#returnFromLog').onclick=()=>{if(!logReturnFn)return;const fn=logReturnFn;log
 window.addEventListener('popstate',()=>back());
 load();refresh();
 
-// v1.0.13 startup: opening splash -> current chapter preload -> start.
+// v1.0.15 startup: opening splash -> current chapter preload -> start.
 // Do not preload every asset in the whole game. Each chapter declares only what it needs.
 const CHAPTER_PRELOAD={
  prologue_wallet:[
   ASSETS.bg.home,ASSETS.bg.townDay,ASSETS.bg.wallet,
   ASSETS.char.heroNormal,ASSETS.char.heroSmile,ASSETS.char.heroThink,
   ASSETS.char.heroSurprise,ASSETS.char.walletOwner,ASSETS.char.kuroppy
+ ],
+ jpyc:[
+  ASSETS.bg.townDay,ASSETS.char.heroNormal,ASSETS.char.heroSmile,
+  ASSETS.char.heroReady,ASSETS.char.heroThink,ASSETS.char.heroSurprise,ASSETS.char.kuroppy
+ ],
+ meeting:[
+  ASSETS.bg.book,ASSETS.bg.townDay,ASSETS.char.heroNormal,ASSETS.char.heroSmile,
+  ASSETS.char.heroThink,ASSETS.char.heroine,ASSETS.char.kuroppy
+ ],
+ security:[
+  ASSETS.bg.townDay,ASSETS.char.heroNormal,ASSETS.char.heroSurprise,
+  ASSETS.char.heroThink,ASSETS.char.scammer,ASSETS.char.kuroppy
  ]
 };
 function wait(ms){return new Promise(r=>setTimeout(r,ms))}
@@ -267,4 +350,5 @@ window.addEventListener('load',async()=>{
 });
 </script>
 <script src="chapters/prologue_wallet.js"></script>
+<script src="chapters/jpyc.js"></script>
 </body></html>

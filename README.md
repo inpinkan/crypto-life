@@ -1,4 +1,19 @@
-# CRYPTO LIFE v1.0.10 — Dialogue Chapter Foundation
+
+## v1.0.15 JPYC Chapter
+- 既存LOGの見た目・復習機能を維持し、各編の先頭LOGだけに `↻` 頭出しマークを付ける基盤を追加。
+- Wallet編は LOG 002 から「Wallet編を最初から再プレイ」が可能。Wallet編クリア済みの時だけ表示。
+- 再プレイ中は本編セーブを上書きせず、途中終了または再プレイ完了で本編の最新進行へ復帰。
+- `MOBILE_TEST.txt` / `mobile_test_server.bat` は本体未参照の補助ファイルだったため削除。
+
+# CRYPTO LIFE v1.0.15 — JPYC Chapter Update
+
+- 起動順を「フェイドイン → 保持 → フェイドアウト → ローディング」に変更。
+- 添付のオープニング画像とローダーキャラクター画像を採用。
+- ローダーキャラクターは読み込み進捗に合わせてバー上を移動。
+- 全画像プリロードを廃止し、現在章（prologue_wallet）で必要な画像だけをプリロード。
+- Wallet編の物語・会話内容は維持。
+
+# CRYPTO LIFE v1.0.12 — Dialogue Chapter Foundation
 
 ## 主な更新
 - 序盤を「一本道に見える」構成へ再設計。
@@ -29,7 +44,7 @@
 - 旧・重複したクリック経路は残していない。
 
 
-## v1.0.10 Preload + Dialogue Stability
+## v1.0.12 Preload + Dialogue Stability
 - v1.0.8をベースに更新。
 - 起動直後にCRYPTO LIFE専用LOADING画面を追加。
 - 初期背景・キャラクター画像をプリロードし、完了するまでゲーム操作を開始できない。
@@ -42,25 +57,30 @@
 - v1.0.8の一本化済み会話進行経路を維持し、旧・重複クリック経路は追加していない。
 
 
-## v1.0.10 修正
+## v1.0.12 修正
 - 「ひとつ前へ」は同一会話内では直前の1発言へ戻るよう修正。
 - クロピー初登場会話を維持し、LOG確認後に会話へ戻る導線を追加。
 - HashPort Wallet公式案内ITEMに公式URLを設定。既存セーブの取得済みITEMも移行時に補完。
 - Wallet編の終端を明示し、LOG確認で行き止まりにならないよう修正。
-- HTML/章ファイルの表示バージョンをv1.0.10へ統一。
+- HTML/章ファイルの表示バージョンをv1.0.12へ統一。
 
 
-## v1.0.11 Wallet Chapter Finish + Mobile Test
-- Wallet編の最終場面を正式な章エンディングへ更新。
-- `completedChapters` に `wallet` を記録し、Wallet編完了状態を保存可能にした。
-- クロピーから右上の SAVE を押すよう自然に案内。
-- Wallet編終了時だけ SAVE ボタンを視覚的に強調し、保存後は強調解除。
-- 続編「JPYC編」を告知。
-- 次編の予告テーマ：
-  - JPYCと暗号資産は何が違う？
-  - JPYCはどこで手に入れる？
-  - JPYCは取引所で買うもの？
-  - そもそも取引所は何をする場所？
-- 「おすすめ取引所」は固定の結論を先に出さず、目的や取扱状況を比較して考える学習テーマとして予告。
-- 600px以下のスマートフォン表示を調整。ヘッダーをsticky化し、ボタン/選択肢のタップ領域を拡大。
-- 既存のWallet編会話・画像・LOG・ITEM構成は維持。
+
+## v1.0.13 Opening Separation / Loader Mascot Cutout
+- v1.0.12をベースに、指定された微調整2点のみを実施。
+- フェイドイン → 保持 → フェイドアウト → ローディングの順序は維持。
+- オープニング/ローディング中は既存の開始画面（NEW GAME / CONTINUE / SETTINGS）を完全非表示。
+- `TAP TO START` を押した時点ではじめて既存開始画面を表示するため、フェイド中への割り込みを解消。
+- ローディング用キャラクターは画像外周につながる黒背景だけを透明化。
+- キャラクター中央の黒い顔は保持し、四角い背景だけを除去。
+- 旧 `loader_icon.png` は残さず `loader_icon_transparent.png` へ完全置換。
+- 現在章だけをプリロードするv1.0.12の方式はそのまま維持。
+- Wallet編の会話・進行内容には変更なし。
+
+
+## v1.0.15 additions
+- Added JPYC chapter with chapter overview before spending money.
+- Covers JPYC, Ethereum / Polygon / Avalanche, gas and native tokens.
+- Adds JPYC EX flow, POL purchase/withdrawal learning path, and wallet confirmation.
+- Added JPYC replay head at LOG 007 after chapter completion.
+- Existing localStorage save key is unchanged for backward compatibility.
