@@ -563,7 +563,7 @@ function securityComplete(){
 
 // --- ウォーキング編 -------------------------------------------------------
 function walkingStart(){
- s.chapter=5;unlockLog(14);save(true);setStoryBgm('meeting');
+ s.chapter=5;unlockLog(14);save(true);setStoryBgm('walking');
  scene('townDay','heroNormal','kuroppy','right','ウォーキング編 — 次の日');
  dialogue([
   [s.name,'「昨日は散々だったな……。今日は平和に過ごしたい。」'],
@@ -661,7 +661,7 @@ function walkingComplete(){
  if(replay?.active&&replay.chapter==='walking')return finishChapterReplay();
  if(!Array.isArray(s.completedChapters))s.completedChapters=[];
  if(!s.completedChapters.includes('walking'))s.completedChapters.push('walking');
- s.walkingDone=true;s.chapter=6;save(true);setStoryBgm('meeting');
+ s.walkingDone=true;s.chapter=6;save(true);setStoryBgm('walking');
  scene('townDay','heroSmile','heroine','right','ウォーキング編 COMPLETE','kuroppy');
  dialogue([
   ['クロピー','「ウォーキング編 COMPLETE〜！🐾✨」'],
