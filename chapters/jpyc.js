@@ -556,6 +556,122 @@ function securityComplete(){
   ['クロピー','「そのとおり〜♪ ここまでの進行をSAVEしておこう！」'],
   [s.name,'「よし。今日はちゃんと保存して終わろう。」'],
   ['クロピー','「それじゃあ、次回もお楽しみに〜！🐾」']
+ ],[['次の日へ',walkingStart]]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
+
+
+// --- ウォーキング編 -------------------------------------------------------
+function walkingStart(){
+ s.chapter=5;unlockLog(14);save(true);setStoryBgm('meeting');
+ scene('townDay','heroNormal','kuroppy','right','ウォーキング編 — 次の日');
+ dialogue([
+  [s.name,'「昨日は散々だったな……。今日は平和に過ごしたい。」'],
+  ['クロピー','「じゃあ今日は歩こ〜♪」'],
+  [s.name,'「……歩くだけ？」'],
+  ['クロピー','「歩くだけ！」'],
+  [s.name,'「その言い方、逆に怪しいんだけど。」'],
+  ['クロピー','「昨日のせいで疑い深くなってる〜！🐾💦」'],
+  ['クロピー','「でもね、歩くことがJPYCにつながるアプリがあるんだよ。」'],
+  [s.name,'「歩くことがJPYCに？」']
+ ],[['どんなアプリか聞く',walkingJhoIntro]])
+}
+function walkingJhoIntro(){
+ scene('townDay','heroThink','kuroppy','right','J歩（Jho）');
+ dialogue([
+  ['クロピー','「名前は“J歩”。スマホで歩いて、アプリの中でポイントを貯められるの。」'],
+  [s.name,'「歩くだけで、いきなりWalletにJPYCが入るってこと？」'],
+  ['クロピー','「そこは違うよ〜。まずJ歩の中でポイントを貯めるの。JPYCへの交換はその先。」'],
+  [s.name,'「なるほど。歩数そのものがJPYCになるわけじゃないのか。」'],
+  ['クロピー','「そうそう。JPYC編では買ってWalletへ送ったけど、こういう日常からJPYCにつながる入口もあるんだよ〜♪」'],
+  [s.name,'「Web3って、取引所とWalletだけじゃないんだな。」']
+ ],[['J歩を見てみる',walkingMeetHeroine]])
+}
+function walkingMeetHeroine(){
+ scene('book','heroNormal','heroine','right','本屋の前');
+ dialogue([
+  ['？？？','「あれ……？」'],
+  [s.name,'「あ。本屋の。」'],
+  ['？？？','「こんにちは。今日は本を買いに？」'],
+  [s.name,'「いや、今日は歩くだけらしい。」'],
+  ['？？？','「歩くだけ……？」'],
+  ['クロピー','「J歩の話してたの〜♪」'],
+  ['？？？','「J歩なら、私も使ってますよ。」'],
+  [s.name,'「えっ？」']
+ ],[['Walletは怖くなかった？',walkingHerReason]])
+}
+function walkingHerReason(){
+ scene('book','heroThink','heroine','right','彼女もJ歩ユーザー');
+ dialogue([
+  [s.name,'「でも前に、Walletを実際に触るのはまだちょっと怖いって言ってなかった？」'],
+  ['？？？','「……覚えてたんですか。」'],
+  [s.name,'「そりゃ覚えてるよ。筆記担当だっただろ。」'],
+  ['？？？','「筆記担当って言い方、まだ続いてるんですね（笑）」'],
+  ['？？？','「私は歩いてポイントを貯めてるところまでです。JPYCへの交換は、まだやってなくて。」'],
+  [s.name,'「あー、なるほど。それなら話がつながった。」'],
+  ['？？？','「調べるのは好きなんですけど、Walletを使うところになると慎重になっちゃって。」'],
+  [s.name,'「そこは俺の方が少しだけ先輩か。」'],
+  ['？？？','「少しだけ、ですか？」'],
+  [s.name,'「昨日危うく詐欺に引っかかるところだったから、大きいことは言えない。」'],
+  ['クロピー','「それ言っちゃうんだ〜！🐾」']
+ ],[['J歩のことを教えてもらう',walkingInvite]])
+}
+function walkingInvite(){
+ scene('book','heroSmile','heroine','right','招待コード');
+ dialogue([
+  ['？？？','「これからJ歩を始めるなら、招待コードがありますよ。」'],
+  [s.name,'「そういうところは準備いいんだな。」'],
+  ['？？？','「調べるのは得意だって言ったじゃないですか（笑）」'],
+  ['クロピー','「筆記担当、つよい〜♪」'],
+  ['？？？','「“JPR7DGF3”です。使うかどうかは自由ですけど、必要ならどうぞ。」'],
+  [s.name,'「あとで忘れそうだな。」'],
+  ['クロピー','「ITEMに入れておけばいいよ〜！」']
+ ],[['J歩をITEMに登録する',walkingAddItem]])
+}
+function walkingAddItem(){
+ addItem({type:'link',name:'J歩（Jho）',desc:'歩いてポイントを貯め、JPYCにつながるウォーキングアプリ。招待コードの利用は任意です。',url:'https://jho-official.web.app/#home',code:'JPR7DGF3',image:'assets/ui/jho_icon.webp'});
+ scene('townDay','heroSmile','heroine','right','J歩をITEMに登録した');
+ dialogue([
+  [s.name,'「よし。これなら後から公式サイトも招待コードも確認できる。」'],
+  ['？？？','「便利ですね、それ。」'],
+  ['クロピー','「でしょ〜♪ じゃあ説明ばっかりしてないで、歩こ！」'],
+  [s.name,'「今日は本当に平和なんだろうな？」'],
+  ['クロピー','「歩くだけだってば〜！」'],
+  ['？？？','「私も少し歩きます。せっかくなので。」']
+ ],[['3人で歩いてみる',walkingTogether]])
+}
+function walkingTogether(){
+ scene('townDay','heroSmile','heroine','right','Crypto Townを歩く', 'kuroppy');
+ dialogue([
+  ['クロピー','「てくてく〜♪ てくてく〜♪」'],
+  [s.name,'「クロピー、それ歩いてるっていうか跳ねてない？」'],
+  ['？？？','「歩数に入るんでしょうか（笑）」'],
+  ['クロピー','「細かいことは気にしないの〜！」'],
+  [s.name,'「でも不思議だな。昨日まではWalletとか秘密鍵とか、ずっと難しい話だったのに。」'],
+  ['？？？','「こういう入口なら、Web3を知らない人でも始めやすそうですね。」'],
+  [s.name,'「普段やってる“歩く”からつながるなら、確かに身構えなくていいかも。」'],
+  ['クロピー','「Web3って、難しい言葉の中だけにあるわけじゃないんだよ〜♪」'],
+  ['？？？','「……私もポイントが貯まったら、そのうちJPYCへの交換をやってみようかな。」'],
+  [s.name,'「その時は一緒に確認しよう。Walletのところなら少しは手伝える。」'],
+  ['？？？','「じゃあお願いします。実践担当さん。」'],
+  [s.name,'「その呼び方、定着するの？」']
+ ],[['ウォーキング編を終える',walkingComplete]])
+}
+function walkingComplete(){
+ if(replay?.active&&replay.chapter==='walking')return finishChapterReplay();
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('walking'))s.completedChapters.push('walking');
+ s.walkingDone=true;s.chapter=6;save(true);setStoryBgm('meeting');
+ scene('townDay','heroSmile','heroine','right','ウォーキング編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「ウォーキング編 COMPLETE〜！🐾✨」'],
+  [s.name,'「今日は本当に歩いただけだったな。」'],
+  ['クロピー','「たまには平和な日も必要なの〜♪」'],
+  ['？？？','「でも、歩くことからJPYCにつながるって知れたのは面白かったです。」'],
+  [s.name,'「買うだけじゃないって分かったのは大きいかも。」'],
+  ['クロピー','「J歩の公式サイトと招待コードはITEMからいつでも確認できるよ〜。」'],
+  [s.name,'「よし。ここまでSAVEしておこう。」'],
+  ['クロピー','「それじゃあ、次回もお楽しみに〜！🐾」']
  ],[]);
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
 }

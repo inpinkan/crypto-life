@@ -1,8 +1,9 @@
-// CRYPTO LIFE v1.0.22
+// CRYPTO LIFE v1.0.26
 // 序章〜Wallet編。物語・会話をHTML本体から分離し、今後「JPYC編」「NFT編」などを追加できる構成。
 function begin(){refresh();startAudio();s.history=[];if(s.chapter===0)go(homeIntro);else go(resume)}
 function resume(){
- if((s.completedChapters||[]).includes('security'))return securityComplete();
+ if((s.completedChapters||[]).includes('walking'))return walkingComplete();
+ if((s.completedChapters||[]).includes('security'))return walkingStart();
  if((s.completedChapters||[]).includes('meeting'))return securityStart();
  if((s.completedChapters||[]).includes('jpyc')){
   if(!s.jpycExchangeLinkReviewed)return jpycExchangeLinkReview();
