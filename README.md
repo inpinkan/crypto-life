@@ -1,8 +1,8 @@
-## v1.0.27 Walking BGM Update
+## v1.0.28 Walking BGM Update
 - ウォーキング編専用の明るく軽快なBGMへ変更。
 - セキュリティ編BGMがウォーキング編へ持ち越される判定を修正。
 
-# CRYPTO LIFE v1.0.27 — ウォーキング編 / J歩
+# CRYPTO LIFE v1.0.28 — ウォーキング編 / J歩
 
 - セキュリティ編の次章として「ウォーキング編」を追加。
 - J歩（Jho）を会話中心の物語で紹介。
@@ -97,3 +97,11 @@
 - Adds JPYC EX flow, POL purchase/withdrawal learning path, and wallet confirmation.
 - Added JPYC replay head at LOG 007 after chapter completion.
 - Existing localStorage save key is unchanged for backward compatibility.
+
+
+## v1.0.28 Player Profile & Save Transfer
+- プレイヤーアイコンを端末の写真から設定（端末内保存）
+- PLAYER CARDを追加
+- SAVEデータのバックアップ／復元を追加
+- GAME IDをSAVEデータと一緒に引き継ぎ
+- 旧絵文字アイコン選択を削除
