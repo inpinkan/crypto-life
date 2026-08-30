@@ -1,17 +1,16 @@
-# CRYPTO LIFE v1.0.29 — Mobile Save Transfer Fix
+## v1.0.31 Transfer Code Update
 
-- iPhone / mobile SafariのSAVEバックアップをWeb Share対応に変更。
-- 共有シートから「ファイルに保存」などを選べるように改善。
-- SAVEファイルをUTF-8で明示的に生成し、日本語データの文字化けを防止。
-- 復元時もUTF-8として読み込み、BOM付きファイルにも対応。
-- PCでは従来どおりファイルダウンロード方式へフォールバック。
-- 既存SAVE互換、ストーリー・BGM・進行ロジックは変更なし。
+- v1.0.28をベースに、ファイル式SAVEバックアップ／復元を廃止。
+- SAVE済みデータを `CL1-...` 形式の引継ぎコードとして発行・コピー可能。
+- 別端末／別ブラウザでコードを貼り付けて、GAME ID・名前・進行・G・ステータス・ITEM等を復元。
+- プレイヤー写真は引継ぎコードに含めず、移行先で再設定。
+- PLAYER CARD・写真アイコン設定・既存ストーリーは維持。
 
-## v1.0.29 Walking BGM Update
+## v1.0.28 Walking BGM Update
 - ウォーキング編専用の明るく軽快なBGMへ変更。
 - セキュリティ編BGMがウォーキング編へ持ち越される判定を修正。
 
-# CRYPTO LIFE v1.0.29 — ウォーキング編 / J歩
+# CRYPTO LIFE v1.0.28 — ウォーキング編 / J歩
 
 - セキュリティ編の次章として「ウォーキング編」を追加。
 - J歩（Jho）を会話中心の物語で紹介。
@@ -108,7 +107,7 @@
 - Existing localStorage save key is unchanged for backward compatibility.
 
 
-## v1.0.29 Player Profile & Save Transfer
+## v1.0.28 Player Profile & Save Transfer
 - プレイヤーアイコンを端末の写真から設定（端末内保存）
 - PLAYER CARDを追加
 - SAVEデータのバックアップ／復元を追加
