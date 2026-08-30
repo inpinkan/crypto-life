@@ -1,4 +1,4 @@
-# CRYPTO LIFE v1.0.37 — MetaMask Front Flow Fix
+# CRYPTO LIFE v1.0.39 — MetaMask Front Flow Fix
 
 ## 更新内容
 - BOOK / QUIZシステムをゲーム本体から分離し、`books/quiz_books.js` を新設。
@@ -37,7 +37,7 @@
 - BOOK SHOP常設タブを維持。
 
 
-## v1.0.37 — MetaMask Front Chapter
+## v1.0.39 — MetaMask Front Chapter
 - HOME背景と穏やかな専用BGMでMetaMask前編を追加。
 - ユリと主人公がMetaMaskを初導入し、MetaMaskをITEMへ追加。
 - Secret Recovery Phrase（SRP）の意味、パスワードとの違い、オフライン保管、スクリーンショット／同期メモの注意点を会話で学習。
@@ -48,7 +48,21 @@
 - 既存SAVE互換を維持。
 
 
-## v1.0.37 — MetaMask Front Flow Fix
+## v1.0.39 — MetaMask Front Flow Fix
 - 「ひとつ前へ」を会話単位で戻れるよう修正。章の開始直後でも、会話を1つ進めれば有効になります。
 - 会話ブロックをまたぐ場合も、前のブロックの最後のセリフへ戻るよう修正。
 - MetaMask前編の順序を「導入 → 設定 → セキュリティとプライバシー → リカバリーフレーズ説明 → 安全に控える → 保管リスク説明」に整理。
+
+
+## v1.0.39
+- MetaMask前編の次に「はじめてのBTC編」を追加。
+- Bitcoinの2,100万BTC上限、半減期、現物の数量と価格の違いを会話で学習。
+- OKJの販売所／取引所、板、成行／指値、入出金口座／取引口座の違いを追加。
+- 主人公が少額の現物BTCを体験。実際の購入はゲーム進行条件にしない。
+- 初めての操作は少額テストから、という安全な運用思想を追加。
+
+
+## v1.0.39 — BTC Trading Cost Clarification
+- 販売所は簡単な分、交換業者が間に入るため取引所より売買コストが高くなりやすいことを会話で追加。
+- 販売所／取引所の売買コストと、外部Wallet送付時のネットワーク手数料（ガス代との混同）を区別。
+- 手数料率など変動する固定値はゲーム内に記載しない。
