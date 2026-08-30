@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.21
+// CRYPTO LIFE v1.0.35
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -286,14 +286,14 @@ function meetingBookIntro(){
   [s.name,'「なんか先生みたいだな。」'],
   ['女の子','「先生じゃありません。本屋に長居してる人です。」'],
   [s.name,'「それはそれで説得力あるな。」'],
-  ['女の子','「……ちなみに、この本120G。」'],
+  ['女の子','「……ちなみに、この本100G。」'],
   [s.name,'「ゲーム内通貨で売ってるんだ。」']
  ],[['値段と所持金を確認する',meetingPriceCheck]])
 }
 function meetingPriceCheck(){
  scene('book','heroThink','heroine','right','本を買う？');
  dialogue([
-  [s.name,`「120Gか。今の所持金は500G。」`],
+  [s.name,`「100Gか。今の所持金は500G。」`],
   ['女の子','「無理して買わなくてもいいよ。本は逃げないし。」'],
   [s.name,'「さっきも似たようなこと聞いた気がする。」'],
   ['女の子','「本屋では大事な格言なの。」']
@@ -301,9 +301,9 @@ function meetingPriceCheck(){
 }
 function meetingPurchaseConfirm(){
  scene('book','heroThink','heroine','right','購入確認');
- if(s.gold<120){
+ if(s.gold<100){
   dialogue([
-   [s.name,`「……${s.gold}G。120Gには足りないな。」`],
+   [s.name,`「……${s.gold}G。100Gには足りないな。」`],
    ['女の子','「じゃあ今日は立ち読みで得したってことで。」'],
    [s.name,'「前向きだな。」'],
    ['女の子','「お金が貯まったら、また来ればいいよ。」']
@@ -311,17 +311,15 @@ function meetingPurchaseConfirm(){
   return;
  }
  dialogue([
-  [s.name,`「所持金500G。買うと120G使うから、残りは380G。」`],
+  [s.name,`「所持金500G。買うと100G使うから、残りは400G。」`],
   ['女の子','「ここで本当に買うか決めるんだね。」'],
-  [s.name,'「勝手に財布から120G消えたら怖いからな。」'],
+  [s.name,'「勝手に財布から100G消えたら怖いからな。」'],
   ['女の子','「それはWeb3以前の問題だね。」']
- ],[['120Gで購入する',meetingBuyBook],['やっぱり買わない',meetingNoBook]])
+ ],[['100Gで購入する',meetingBuyBook],['やっぱり買わない',meetingNoBook]])
 }
 function meetingBuyBook(){
  if(!s.bookOwned){
-  s.gold-=120;s.bookOwned=true;
-  addItem({type:'normal',name:'はじめてのWeb3',desc:'本屋で120Gで購入した入門書。Wallet・チェーン・ガス代・セキュリティなどの豆知識と初級クイズが載っている。'});
-  save(true);
+  purchaseBook('web3_beginner',{silent:true});
  }
  scene('book','heroSmile','heroine','right','はじめてのWeb3を購入');
  dialogue([
@@ -338,7 +336,7 @@ function meetingNoBook(){
  dialogue([
   [s.name,'「今日はやめておく。JPYC編で覚えたこともまだ整理できてないし。」'],
   ['女の子','「いいと思う。買っただけで賢くなる本はないからね。」'],
-  [s.name,'「あったら120Gどころじゃ済まなそう。」'],
+  [s.name,'「あったら100Gどころじゃ済まなそう。」'],
   ['女の子','「あったら私が先に買ってる。」']
  ],[['もう少し話す',meetingAfterBook]])
 }
@@ -657,6 +655,48 @@ function walkingTogether(){
   [s.name,'「その呼び方、定着するの？」']
  ],[['ウォーキング編を終える',walkingComplete]])
 }
+function walkingNameAsk(){
+ scene('townDay','heroThink','heroine','right','帰り道 — まだ聞いていなかったこと','kuroppy');
+ dialogue([
+  [s.name,'「……あのさ。」'],
+  ['？？？','「はい？」'],
+  [s.name,'「その……今さらなんだけど。」'],
+  ['？？？','「？」'],
+  [s.name,'「名前、まだ聞いてなかったなって。」'],
+  ['？？？','「あ……。」'],
+  [s.name,'「いや、本屋でも聞こうとしたんだけど、その時はクロピーが――」'],
+  ['クロピー','「ボクのせいにしないで〜！🐾💦」'],
+  ['？？？','「ふふっ。そうでしたね。」'],
+  [s.name,'「……それで、名前……聞いてもいい？」']
+ ],[['名前を聞く',walkingNameAnswer]])
+}
+function walkingNameAnswer(){
+ s.heroineName='ユリ';s.nameRevealDone=true;save(true);
+ scene('townDay','heroSmile','heroine','right','彼女の名前 — ユリ','kuroppy');
+ dialogue([
+  ['ユリ','「ユリです。」'],
+  [s.name,'「ユリ……。」'],
+  ['ユリ','「はい。よろしくお願いします、実践担当さん。」'],
+  [s.name,'「その呼び方は続くんだ。」'],
+  ['ユリ','「せっかくなので（笑）」'],
+  ['クロピー','「ユリちゃん！ よろしく〜！ きゃわわ〜🐾✨」'],
+  ['ユリ','「クロピーちゃんは、ずっとその調子ですね（笑）」'],
+  [s.name,'「……ユリか。」'],
+  ['ユリ','「なんですか？」'],
+  [s.name,'「いや、なんでもない。」']
+ ],[['次回へ',nameRevealBridgeComplete]])
+}
+function nameRevealBridgeComplete(){
+ scene('townDay','heroSmile','heroine','right','名前を知った帰り道','kuroppy');
+ dialogue([
+  [s.name,'「じゃあ、またな。ユリ。」'],
+  ['ユリ','「はい。また会いましょう。」'],
+  ['クロピー','「次は何が起きるかな〜♪」'],
+  [s.name,'「平和なのを頼む。」'],
+  ['クロピー','「それはどうかな〜？ きゃわわ〜🐾」']
+ ],[]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
 function walkingComplete(){
  if(replay?.active&&replay.chapter==='walking')return finishChapterReplay();
  if(!Array.isArray(s.completedChapters))s.completedChapters=[];
@@ -667,11 +707,10 @@ function walkingComplete(){
   ['クロピー','「ウォーキング編 COMPLETE〜！🐾✨」'],
   [s.name,'「今日は本当に歩いただけだったな。」'],
   ['クロピー','「たまには平和な日も必要なの〜♪」'],
-  ['？？？','「でも、歩くことからJPYCにつながるって知れたのは面白かったです。」'],
+  [s.nameRevealDone?'ユリ':'？？？','「でも、歩くことからJPYCにつながるって知れたのは面白かったです。」'],
   [s.name,'「買うだけじゃないって分かったのは大きいかも。」'],
   ['クロピー','「J歩の公式サイトと招待コードはITEMからいつでも確認できるよ〜。」'],
   [s.name,'「よし。ここまでSAVEしておこう。」'],
-  ['クロピー','「それじゃあ、次回もお楽しみに〜！🐾」']
- ],[]);
- setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+  ['クロピー','「ウォーキング編はここまで〜！🐾」']
+ ],[['帰り道へ',walkingNameAsk]]);
 }
