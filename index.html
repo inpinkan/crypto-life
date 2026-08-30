@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#08101f">
-<title>CRYPTO LIFE v1.0.35</title>
+<title>CRYPTO LIFE v1.0.37</title>
 <style>
 :root{--bg:#070b14;--panel:#10182a;--panel2:#16223a;--line:#53698e;--text:#f4f7ff;--muted:#a9b5ca;--accent:#f2c64f;--good:#72e6ad;--warn:#ffd27c;--blue:#5eb8ff}*{box-sizing:border-box}html,body{margin:0;background:#050913;color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans JP",monospace}body{min-height:100dvh;display:flex;justify-content:center}button,input,textarea{font:inherit}button{cursor:pointer;color:inherit}#app{width:min(100%,620px);min-height:100dvh;background:linear-gradient(#08101f,#0a1324);overflow:hidden}.screen{display:none;min-height:100dvh}.screen.active{display:flex;flex-direction:column}.pixel{border:2px solid #7285aa;box-shadow:inset 0 0 0 2px #253551;background:#10192c}.title{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(#061020aa,#061020e8),url('assets/backgrounds/town_night.webp') center/cover}.logo{font-size:clamp(34px,10vw,58px);font-weight:1000;letter-spacing:.08em;text-align:center;text-shadow:3px 3px 0 #294a75,6px 6px 0 #04070d}.sub{margin:8px 0 28px;color:#d8e5ff;text-align:center}.ver,.small{font-size:11px;color:var(--muted)}.menu{width:min(390px,94%);padding:14px;background:#091221e8}.btn,.menu button,.choice{width:100%;padding:13px 12px;margin:5px 0;background:#1a2b49;border:2px solid #7086ad;border-radius:3px;font-weight:800;text-align:left}.menu button:disabled{opacity:.35}.top{min-height:48px;padding:7px 10px;display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:2px solid #263755;background:#0b1425}.top-actions{display:flex;gap:6px}.top-actions button{padding:6px 8px;background:#162744;border:1px solid #667da5;font-size:11px}#gameSettings,#save{width:54px;min-width:54px;text-align:center}.main{padding:10px 10px 86px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}.stat{background:#111c30;border:1px solid #40557c;padding:7px 4px;text-align:center}.stat b{display:block;font-size:16px}.stat small{font-size:8px;color:var(--muted)}.xp-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}.progress{flex:1;height:9px;background:#080e1b;border:1px solid #465b80;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#e5b83e,#ffe07f)}.scene{position:relative;aspect-ratio:16/9;overflow:hidden;margin:8px 0;background:#0d1727}.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06101a2b,transparent 28%,transparent 72%,#06101a2b);pointer-events:none}.char{position:absolute;bottom:-4%;height:92%;max-width:52%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 4px 6px #0008);transition:filter .15s}.char.left{left:-2%}.char.right{right:-2%;transform:scaleX(-1)}.char.center{left:50%;transform:translateX(-50%);height:62%;max-width:30%;z-index:3;bottom:-2%}.scene.three .char.left,.scene.three .char.right{height:86%;max-width:43%}.scene.three .char.left{left:-7%}.scene.three .char.right{right:-7%}.char.dim{filter:brightness(.82) drop-shadow(0 4px 6px #0008)}.char.hidden{display:none}.quest{position:absolute;right:8px;top:8px;z-index:4;max-width:46%;padding:6px 8px;background:#071225dc;border:1px solid #607aa5;font-size:9px;line-height:1.45}.quest b{color:var(--accent)}.dialog{padding:12px 13px;margin-bottom:8px;min-height:128px}.speaker{display:inline-block;color:var(--accent);font-weight:900;margin-bottom:7px}.dialog p{margin:0;line-height:1.8;font-size:14px;min-height:3.6em}.dialog-next{float:right;margin-top:5px;font-size:18px;color:var(--accent);animation:blink 1s steps(2,end) infinite}.dialog-next.hidden{visibility:hidden}.dialog-controls{display:flex;gap:6px;margin-top:8px}.mini{padding:7px 9px;background:#142440;border:1px solid #53698e;font-size:10px}.mini:disabled{opacity:.35}.logrow{width:100%;display:flex;justify-content:space-between;gap:8px;padding:9px;margin:5px 0;background:#121f35;border:1px solid #40557c;color:#fff;text-align:left}.logrow.locked{opacity:.55}.lognum{color:var(--accent);font-weight:900}.logdetail{margin-top:8px;padding:10px;border:1px solid #40557c;background:#0c1628}.lognav{display:flex;justify-content:space-between;gap:6px;margin-top:10px}.replay-mark{color:var(--accent);font-weight:1000;margin-left:8px}.replay-start{margin-top:10px;border-color:var(--accent);background:#2a2515}.replay-status{margin:8px 0;padding:8px 10px;border:1px solid #8b7938;background:#18180e;color:#fff4c0;font-size:10px}.replay-exit{display:none}.replay-exit.show{display:inline-block}@keyframes blink{50%{opacity:.25}}.choices{display:grid;gap:6px;margin-top:10px}.choice{margin:0;background:#192a48}.choice:hover{background:#223a61}.card{background:#101a2d;border:1px solid #34496d;padding:11px;margin-bottom:8px}.card h3{margin:0 0 8px;font-size:14px;color:#e8eeff}.card p{margin:5px 0;line-height:1.6;font-size:12px;color:#dce5fa}.nav{position:fixed;bottom:0;width:min(100%,620px);display:grid;grid-template-columns:repeat(4,1fr);background:#0b1322;border-top:2px solid #304565;padding-bottom:env(safe-area-inset-bottom);z-index:8}.nav button{border:0;background:transparent;color:#aab6d0;padding:10px 4px;font-size:10px}.nav button.active{color:#fff;background:#192842}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{width:min(480px,100%);max-height:85dvh;overflow:auto;padding:16px}.close{float:right;background:#253a60;border:2px solid #6b7ea7;color:white;padding:6px 9px}input,textarea{width:100%;padding:13px;background:#0c1425;border:2px solid #61749c;color:white;margin:8px 0 14px}textarea{min-height:104px;resize:vertical;line-height:1.45;word-break:break-all}.transfer-code{font-size:11px}.badge{display:inline-block;padding:7px 8px;border:1px solid #7287b2;font-size:10px;margin:3px}.itemcard{padding:10px;margin:7px 0;border:1px solid #40557c;background:#0c1628}.itemcard b{color:#fff}.itemcard p{margin:5px 0}.itemlink{display:inline-block;margin-top:5px;padding:7px 9px;border:1px solid #607aa5;background:#172945;color:#fff;text-decoration:none}.profile-preview{display:flex;align-items:center;gap:12px;margin:8px 0 10px}.profile-avatar{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid #7086ad;background:#0a1324}.profile-placeholder{display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);text-align:center}.profile-actions{flex:1}.player-card{padding:18px;text-align:center;background:linear-gradient(145deg,#111d33,#0a1324);border:2px solid #7285aa}.player-card .profile-avatar{width:96px;height:96px;margin:0 auto 10px}.player-card h2{margin:4px 0}.player-card-id{font-size:11px;color:var(--accent);letter-spacing:.08em}.player-card-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:14px 0}.player-card-stats div{border:1px solid #40557c;padding:7px 2px}.player-card-stats b{display:block;font-size:16px}.player-card-badges{margin-top:10px}.backup-row{margin-top:16px;padding-top:12px;border-top:1px solid #40557c}.good{color:var(--good)}.warn{color:var(--warn)}.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#eef3ff;color:#0c1221;padding:10px 13px;border:3px solid #273b63;display:none;width:min(90%,440px);font-weight:800;z-index:30}.toast.show{display:block}@media(max-width:420px){.main{padding-left:7px;padding-right:7px}.dialog p{font-size:13px}.char{height:88%}.quest{font-size:8px}.status{gap:3px}.stat{padding:6px 2px}.top{padding:6px 7px}}@media(min-width:800px){body{padding:18px 0}#app{min-height:calc(100dvh - 36px);border:3px solid #263a59;box-shadow:0 0 0 4px #0b1423,0 20px 80px #000}.screen,.title{min-height:calc(100dvh - 36px)}}
 
@@ -80,9 +80,9 @@ body.boot-sequence #app{
 </div>
 
 <div id="app">
-<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.35</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
+<section id="titleScreen" class="screen active"><div class="title"><div class="logo">CRYPTO LIFE</div><div class="sub">Web3育成シミュレーション<br><span class="ver">PLAYER EXPERIENCE v1.0.37</span></div><div class="menu pixel"><button id="new">▶ NEW GAME</button><button id="cont">▶ CONTINUE</button><button id="settings">▶ SETTINGS</button><p class="small">会話しながら、少しずつWeb3を体験して成長しよう。</p></div></div></section>
 <section id="gameScreen" class="screen">
-<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.35</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
+<header class="top"><div><b>CRYPTO LIFE</b> <span class="ver">v1.0.37</span></div><div class="top-actions"><button id="sound">♪ SOUND ON</button><button id="gameSettings">⚙</button><button id="save">SAVE</button></div></header>
 <main class="main">
 <div class="status"><div class="stat"><b id="lv">1</b><small>LEVEL</small></div><div class="stat"><b id="kn">0</b><small>KNOWLEDGE</small></div><div class="stat"><b id="ex">0</b><small>EXPERIENCE</small></div><div class="stat"><b id="se">0</b><small>SECURITY</small></div></div>
 <div class="xp-row"><div class="progress"><i id="bar" style="width:0"></i></div><span class="small">EXP <span id="xp">0</span>/<span id="need">100</span></span></div>
@@ -134,7 +134,7 @@ const LOGS=[
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const KEY='cryptolife_v110',OLDKEYS=['cryptolife_v106','cryptolife_v105','cryptolife_v102','cryptolife_v101','cryptolife_v100'];
 const makeGameId=()=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',part=n=>Array.from({length:n},()=>c[Math.floor(Math.random()*c.length)]).join('');return 'CL-'+part(4)+'-'+part(4)};
-const fresh=()=>({name:'',gameId:makeGameId(),profileImage:'',level:1,xp:0,knowledge:0,experience:0,security:0,gold:500,walletPrepared:false,jpycPrepared:false,polPrepared:false,exchangeChoice:'',addressLesson:false,bookOwned:false,ownedBooks:[],quizCorrect:{},quizCompletedBooks:[],meetingDone:false,securityDone:false,walkingDone:false,heroineName:'',nameRevealDone:false,chapter:0,completedChapters:[],day:1,items:[{type:'normal',name:'古いスマートフォン',desc:'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。'}],skills:[['Walletの役割を知る',false],['Addressの意味を知る',false],['秘密情報を守る',false],['HashPort Walletを準備する',false],['JPYCを送受信する',false]],logs:[],met:{walletOwner:false,kuroppy:false,keita:false},history:[]});
+const fresh=()=>({name:'',gameId:makeGameId(),profileImage:'',level:1,xp:0,knowledge:0,experience:0,security:0,gold:500,walletPrepared:false,jpycPrepared:false,polPrepared:false,exchangeChoice:'',addressLesson:false,bookOwned:false,ownedBooks:[],quizCorrect:{},quizCompletedBooks:[],meetingDone:false,securityDone:false,walkingDone:false,heroineName:'',nameRevealDone:false,metamaskFrontDone:false,recoveryPhraseNoted:false,chapter:0,completedChapters:[],day:1,items:[{type:'normal',name:'古いスマートフォン',desc:'ゲーム開始時から持っているスマートフォン。これからWeb3の情報を調べたり、Walletを使ったりする時にも活躍しそうだ。'}],skills:[['Walletの役割を知る',false],['Addressの意味を知る',false],['秘密情報を守る',false],['HashPort Walletを準備する',false],['JPYCを送受信する',false]],logs:[],met:{walletOwner:false,kuroppy:false,keita:false},history:[]});
 let s=fresh(),soundOn=true,audio=null,bgmTimer=null,typeTimer=null,currentFlow=null,currentStep=0,currentChoices=[],logReturnFn=null,replay=null;
 function has(){return!!([KEY,...OLDKEYS].some(k=>localStorage.getItem(k)))}
 function save(q=false){if(!q&&!replay?.active)localStorage.setItem(KEY,JSON.stringify(s));if(!q)toast(replay?.active?'再プレイ中は本編セーブを変更しません。':'SAVEしました。');refresh()}
@@ -254,12 +254,22 @@ function startChapterReplay(chapter){
 function finishChapterReplay(){if(!replay?.active)return;const original=replay.original;replay=null;s=original;s.history=[];currentFlow=null;currentStep=0;currentChoices=[];logReturnFn=null;localStorage.setItem(KEY,JSON.stringify(s));updateReplayUi();refresh();showPanel('home');toast('本編の最新地点へ戻りました。');go(resume,false)}
 function updateReplayUi(){const b=$('#exitReplay');if(b)b.classList.toggle('show',!!replay?.active)}
 function scene(bg,left=null,right=null,active='none',quest='',center=null){const S=document.querySelector('.scene'),B=$('#sceneBg'),L=$('#leftChar'),C=$('#centerChar'),R=$('#rightChar');B.src=ASSETS.bg[bg]||bg;[[L,left],[C,center],[R,right]].forEach(([el,key])=>{if(key){el.src=ASSETS.char[key]||key;el.classList.remove('hidden')}else el.classList.add('hidden')});S.classList.toggle('three',!!center);L.classList.toggle('dim',active==='right'||active==='center');C.classList.toggle('dim',active==='left'||active==='right');R.classList.toggle('dim',active==='left'||active==='center');$('#quest').textContent=quest||'自由に行動しよう'}
-function snapshot(fn){s.history.push(fn);if(s.history.length>30)s.history.shift();$('#backScene').disabled=s.history.length<2}
+function updateBackButton(){const b=$('#backScene');if(b)b.disabled=!(currentFlow&&currentStep>0)&&s.history.length<2}
+function snapshot(fn){s.history.push(fn);if(s.history.length>30)s.history.shift();updateBackButton()}
 function go(fn,push=true){if(push){snapshot(fn);try{history.pushState({cl:true},'','#cl'+s.history.length)}catch(e){}}fn()}
-function back(){clearInterval(typeTimer);if(currentFlow&&currentStep>0){currentStep--;sfx('select');showLine();return}if(s.history.length<2)return;s.history.pop();const fn=s.history[s.history.length-1];fn(false);$('#backScene').disabled=s.history.length<2}
+function back(){
+ clearInterval(typeTimer);
+ if(currentFlow&&currentStep>0){currentStep--;sfx('select');showLine();return}
+ if(s.history.length<2)return;
+ s.history.pop();
+ const fn=s.history[s.history.length-1];
+ fn(false);
+ if(currentFlow&&currentFlow.length){currentStep=currentFlow.length-1;showLine()}
+ updateBackButton();
+}
 function typeText(text,done){clearInterval(typeTimer);const el=$('#text');const plain=text.replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'');let i=0;el.textContent='';$('#nextMark').classList.add('hidden');typeTimer=setInterval(()=>{i++;el.textContent=plain.slice(0,i);if(i>=plain.length){clearInterval(typeTimer);done&&done()}},18);el.onclick=()=>{if(i<plain.length){clearInterval(typeTimer);i=plain.length;el.textContent=plain;done&&done()}else advanceDialogue()}}
 function dialogue(lines,choices=[]){currentFlow=lines;currentStep=0;currentChoices=choices;showLine()}
-function showLine(){const line=currentFlow[currentStep];if(!line)return finishDialogue();$('#speaker').textContent=line[0];$('#choices').innerHTML='';typeText(line[1],()=>$('#nextMark').classList.remove('hidden'))}
+function showLine(){const line=currentFlow[currentStep];updateBackButton();if(!line)return finishDialogue();$('#speaker').textContent=line[0];$('#choices').innerHTML='';typeText(line[1],()=>$('#nextMark').classList.remove('hidden'))}
 function advanceDialogue(){if(!currentFlow)return;if(currentStep<currentFlow.length-1){currentStep++;sfx('select');showLine()}else finishDialogue()}
 function finishDialogue(){clearInterval(typeTimer);$('#nextMark').classList.add('hidden');const b=$('#choices');b.innerHTML='';currentChoices.forEach(c=>{const q=document.createElement('button');q.className='choice';q.textContent='▶ '+c[0];q.onclick=()=>{sfx('select');go(c[1])};b.appendChild(q)})}
 function intro(name,lines,after){dialogue([[name,lines[0]],[s.name,lines[1]],[name,lines[2]]],after)}
@@ -267,7 +277,8 @@ function intro(name,lines,after){dialogue([[name,lines[0]],[s.name,lines[1]],[na
 function showPanel(id){$$('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.p===id));$$('.panel').forEach(x=>x.style.display='none');$('#'+id).style.display='block';if(id==='bookshop'){const c=$('#bookShopContent');if(bookShopUnlocked())renderBookShop();else if(c)c.innerHTML='<div class="itemcard"><b>まだ本屋を利用できません。</b><p>ストーリーを進めるとBOOK SHOPが開きます。</p></div>'}if(id==='log')renderLogs();const r=$('#returnFromLog');if(r)r.style.display=id==='log'&&logReturnFn?'block':'none'}
 let bgmMode='';
 function storyBgmMode(){
- if(replay?.chapter==='walking'||s.chapter>=5)return 'walking';
+ if(s.chapter>=6)return 'metamask';
+ if(replay?.chapter==='walking'||s.chapter===5)return 'walking';
  if(replay?.chapter==='security'||s.chapter===4)return 'security';
  if(replay?.chapter==='meeting'||s.chapter===3)return 'meeting';
  if(replay?.chapter==='jpyc'||s.chapter===2)return 'jpyc';
@@ -287,7 +298,8 @@ function startAudio(){
    jpyc:{notes:[247,311,370,311],tempo:520,duration:.28,type:'triangle',gain:.018},
    meeting:{notes:[330,415,494,554,494,415],tempo:400,duration:.22,type:'sine',gain:.020},
    security:{notes:[165,156,147,139],tempo:690,duration:.42,type:'sawtooth',gain:.010},
-   walking:{notes:[392,440,494,587,523,494,440,523],tempo:330,duration:.18,type:'triangle',gain:.019}
+   walking:{notes:[392,440,494,587,523,494,440,523],tempo:330,duration:.18,type:'triangle',gain:.019},
+   metamask:{notes:[330,392,440,494,440,392],tempo:460,duration:.24,type:'sine',gain:.018}
   }[mode];
   let i=0;
   bgmTimer=setInterval(()=>{
@@ -304,7 +316,7 @@ function setStoryBgm(mode){
  if(!soundOn)return;
  if(bgmTimer){clearInterval(bgmTimer);bgmTimer=null}
  bgmMode='';
- const chapterMap={wallet:1,jpyc:2,meeting:3,security:4,walking:5};
+ const chapterMap={wallet:1,jpyc:2,meeting:3,security:4,walking:5,metamask:6};
  const oldChapter=s.chapter;
  if(chapterMap[mode])s.chapter=chapterMap[mode];
  startAudio();
@@ -387,6 +399,10 @@ const CHAPTER_PRELOAD={
  walking:[
   ASSETS.bg.townDay,ASSETS.bg.book,ASSETS.char.heroNormal,ASSETS.char.heroSmile,
   ASSETS.char.heroThink,ASSETS.char.heroine,ASSETS.char.kuroppy
+ ],
+ metamask:[
+  ASSETS.bg.home,ASSETS.char.heroNormal,ASSETS.char.heroSmile,ASSETS.char.heroThink,
+  ASSETS.char.heroSurprise,ASSETS.char.heroine,ASSETS.char.kuroppy
  ]
 };
 function wait(ms){return new Promise(r=>setTimeout(r,ms))}

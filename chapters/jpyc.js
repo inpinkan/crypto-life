@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.35
+// CRYPTO LIFE v1.0.37
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -694,6 +694,113 @@ function nameRevealBridgeComplete(){
   ['クロピー','「次は何が起きるかな〜♪」'],
   [s.name,'「平和なのを頼む。」'],
   ['クロピー','「それはどうかな〜？ きゃわわ〜🐾」']
+ ],[['MetaMaskの話を聞く',metamaskFrontStart]]);
+}
+
+// --- MetaMask前編 -------------------------------------------------------
+function metamaskFrontStart(){
+ s.chapter=6;setStoryBgm('metamask');
+ scene('home','heroNormal','heroine','right','MetaMask前編 — もうひとつのWallet','kuroppy');
+ dialogue([
+  [s.name,'「そういえばユリ。Walletの本にMetaMaskってよく出てこなかった？」'],
+  ['ユリ','「出てきました。自分で管理するタイプのWalletとして、かなり有名ですよね。」'],
+  [s.name,'「さすが筆記担当。じゃあ使ってる？」'],
+  ['ユリ','「…………。」'],
+  [s.name,'「その間は何。」'],
+  ['ユリ','「存在はよく知っています。アプリは……まだです。」'],
+  ['クロピー','「知識は満点、実践はこれからきゃわ〜♪」'],
+  ['ユリ','「言い方（笑）」'],
+  [s.name,'「俺も入れてないし、ちょうどいいか。二人とも今日が初MetaMaskだな。」'],
+  ['クロピー','「じゃあ一緒にやってみるきゃわ！ MetaMaskはセルフカストディアル、ノンカストディアルとも呼ばれるWallet。自分で資産へのアクセスを管理するタイプきゃわ。」'],
+  [s.name,'「自由に使える代わりに、自分で守るものも増えるってことか。」'],
+  ['ユリ','「そこがHashPort Walletとの大きな違いになりそうですね。」']
+ ],[['公式のMetaMaskを確認する',metamaskInstall]]);
+}
+function metamaskInstall(){
+ addItem({type:'link',name:'MetaMask',desc:'代表的なセルフカストディアルWallet。インストールや更新は公式サイト・正規アプリストアなど信頼できる配布元から確認する。',url:'https://metamask.io/'});
+ scene('home','heroSmile','heroine','right','MetaMaskを準備する','kuroppy');
+ dialogue([
+  ['クロピー','「最初に大事なのは、検索結果の見た目だけで決めないこと。偽物を入れないように公式サイトや正規のアプリストアから確認するきゃわ。」'],
+  [s.name,'「Walletを作る前からセキュリティが始まってるんだな。」'],
+  ['ユリ','「偽物に秘密を渡したら、本物のWalletを安全に使う以前の問題ですもんね。」'],
+  ['クロピー','「そういうこときゃわ。二人とも準備できた？」'],
+  [s.name,'「できた。」'],
+  ['ユリ','「私も入りました。……知ってるアプリなのに、実際に触るとちょっと緊張しますね。」'],
+  ['クロピー','「その慎重さは大事きゃわ。じゃあ次は、秘密を扱う場所から確認してみよう！」']
+ ],[['セキュリティ設定を確認する',metamaskSecurityMenu]]);
+}
+function metamaskSecurityMenu(){
+ scene('home','heroNormal','heroine','right','MetaMaskのセキュリティ設定','kuroppy');
+ dialogue([
+  ['クロピー','「スマホ版なら、メニューの“三”から“設定”、それから“セキュリティとプライバシー”を開いてみるきゃわ。」'],
+  [s.name,'「ここに大事なセキュリティ関係がまとまってるんだな。」'],
+  ['ユリ','「リカバリーフレーズに関する項目もありますね。」'],
+  [s.name,'「リカバリーフレーズ……Wallet編でも名前は聞いたけど、MetaMaskでは自分で管理するんだよな。」'],
+  ['クロピー','「きゃわ。場所が分かったところで、表示する前に“何なのか”をちゃんと知っておこう。」'],
+  ['ユリ','「先に意味を知ってから扱う。大事ですね。」']
+ ],[['リカバリーフレーズを学ぶ',metamaskRecovery]]);
+}
+function metamaskRecovery(){
+ scene('home','heroThink','heroine','right','Secret Recovery Phrase','kuroppy');
+ dialogue([
+  ['クロピー','「MetaMaskではSecret Recovery Phrase、略してSRPって呼ばれる大切な秘密があるきゃわ。ここでは“リカバリーフレーズ”って呼ぶね。」'],
+  [s.name,'「パスワードとは違うの？」'],
+  ['ユリ','「違います。端末やアプリを開くためのパスワードと、Walletを復元するための秘密は役割が別です。」'],
+  ['クロピー','「きゃわ！ リカバリーフレーズを知った人はWalletを復元できる可能性がある。だからサポートを名乗る人にも渡さないきゃわ。」'],
+  [s.name,'「じゃあ、忘れないようにスクショしておけば――」'],
+  ['クロピー','「そこ待ったきゃわ！」'],
+  ['ユリ','「写真って、設定によってクラウドへ同期されることがありますよね。」'],
+  ['クロピー','「メモアプリも同期されることがあるきゃわ。オンラインに秘密のコピーを増やすほど、アカウントや端末を狙われた時の入口も増える。だから紙などオフラインで正確に控えて、安全な場所に保管するのが基本きゃわ。」'],
+  [s.name,'「便利だから安全、とは限らないのか。」'],
+  ['クロピー','「紙だって紛失や盗難には気をつけるきゃわ。大切なのは“秘密を誰にも見せず、なくさず、自分で守る”こと！」'],
+  ['クロピー','「周りに人がいないことも確認して、本当に必要な時だけ慎重に表示して控えるきゃわ。」']
+ ],[['安全な場所に控える',metamaskRecoveryCheck]]);
+}
+function metamaskRecoveryCheck(){
+ scene('home','heroNormal','heroine','right','確認 — 大切なメモ','kuroppy');
+ dialogue([
+  ['クロピー','「CRYPTO LIFEには本物のリカバリーフレーズを入力しなくていいきゃわ。ゲームにも保存しないよ。」'],
+  ['クロピー','「自分のリカバリーフレーズを、安全な方法で正確に控えたかだけ確認するきゃわ。」']
+ ],[['はい、控えました',()=>{s.recoveryPhraseNoted=true;save(true);metamaskWhyOffline()}],['まだです',metamaskNotYet]]);
+}
+function metamaskNotYet(){
+ scene('home','heroSmile','heroine','right','急がなくて大丈夫','kuroppy');
+ dialogue([
+  ['クロピー','「じゃあ、ここで待ってるきゃわ。大事なところだから急がなくていいよ。」'],
+  ['ユリ','「こういうところは、早さより確実さですね。」'],
+  [s.name,'「よし。ちゃんと確認してから進もう。」']
+ ],[['控えたらもう一度確認する',metamaskRecoveryCheck]]);
+}
+function metamaskWhyOffline(){
+ scene('home','heroThink','heroine','right','秘密を守るということ','kuroppy');
+ dialogue([
+  [s.name,'「そういえば、フリーWi-Fiにつないだらリカバリーフレーズがそのまま見られるってこと？」'],
+  ['クロピー','「つないだだけで全部丸見え、って単純な話じゃないきゃわ。でも偽Wi-Fiやフィッシングみたいな余計な危険に近づくことはある。大事なWallet操作を、わざわざ信用できない通信環境でする必要はないきゃわ。」'],
+  ['ユリ','「危険な入口を自分から増やさない、ですね。」'],
+  [s.name,'「SNSにスクショを載せるのは……さすがに誰もしないだろ。」'],
+  ['クロピー','「“Walletできた！”ってうれしくて画面を載せて、秘密まで写ったら大変きゃわ。公開された秘密は、投稿を消しても誰かがコピー済みかもしれない。」'],
+  ['ユリ','「一度知られた秘密を、“知らなかった状態”には戻せませんからね。」'],
+  ['クロピー','「もし秘密鍵やリカバリーフレーズを他人に知られた可能性があるなら、そのWalletを安全だと思い続けないこと。安全な新しいWalletへの資産移動などを考えるきゃわ。」'],
+  [s.name,'「一瞬のうっかりが大きいんだな……。」'],
+  [s.name,'「自分のWalletを持つって、自由になるだけじゃないんだな。」'],
+  ['ユリ','「自分で管理するから、自分で守る。……本で読んだ時より実感があります。」'],
+  [s.name,'「筆記担当も、今日は実践したな。」'],
+  ['ユリ','「少しだけ昇格です（笑）」'],
+  ['クロピー','「二人とも合格きゃわ〜♪」']
+ ],[['MetaMask前編を終える',metamaskFrontComplete]]);
+}
+function metamaskFrontComplete(){
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('metamaskFront'))s.completedChapters.push('metamaskFront');
+ s.metamaskFrontDone=true;s.chapter=7;unlockLog(10);save(true);setStoryBgm('metamask');
+ scene('home','heroSmile','heroine','right','MetaMask前編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「MetaMask前編 COMPLETE〜！ きゃわわ〜♪」'],
+  [s.name,'「アプリを入れるだけのつもりが、秘密の管理が一番大事だったな。」'],
+  ['ユリ','「ノンカストディアルWalletの“自分で管理する”って、こういう意味なんですね。」'],
+  ['クロピー','「MetaMaskはITEMからいつでも公式サイトを確認できるきゃわ。」'],
+  [s.name,'「よし。ここまでSAVEしておこう。」'],
+  ['クロピー','「次回もお楽しみに〜！」']
  ],[]);
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
 }
