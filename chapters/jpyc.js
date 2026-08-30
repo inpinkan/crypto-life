@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.39
+// CRYPTO LIFE v1.0.40
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -934,4 +934,79 @@ function walkingComplete(){
   [s.name,'「よし。ここまでSAVEしておこう。」'],
   ['クロピー','「ウォーキング編はここまで〜！🐾」']
  ],[['帰り道へ',walkingNameAsk]]);
+}
+
+
+// --- コンビニでJPYC!? 編 -----------------------------------------------
+function convenienceJpycStart(){
+ s.chapter=8;setStoryBgm('jpyc');
+ scene('home','heroSmile','heroine','right','コンビニでJPYC!? 編 — 2026年8月のニュース','kuroppy');
+ dialogue([
+  [s.name,'「ユリ！ クロピー！ これ見て。ローソンでJPYCが使えるようになったって！」'],
+  ['ユリ','「えっ。私たちがWalletで触った、あのJPYCですか？」'],
+  ['クロピー','「おおっ、そこまで見つけたきゃわ！ ……でも主人公、見出しだけで走り出すのは待つきゃわ。」'],
+  [s.name,'「え？ “ローソンでJPYC決済”って書いてあるけど。」'],
+  ['ユリ','「……“実証実験”とも書いてありますね。」'],
+  [s.name,'「実証実験？」'],
+  ['クロピー','「そこが今日の大事ポイントきゃわ。“全国のローソンで誰でもJPYC払い開始！”という話ではないよ。」'],
+  [s.name,'「危ない。もうコンビニ行く気だった（笑）」']
+ ],[['何を実験したの？',convenienceJpycTakanawa]]);
+}
+function convenienceJpycTakanawa(){
+ scene('home','heroNormal','heroine','right','高輪ゲートウェイシティ店の実証','kuroppy');
+ dialogue([
+  ['クロピー','「2026年8月6日、ローソン高輪ゲートウェイシティ店で、JPYCを使った決済の実証が行われたきゃわ。」'],
+  ['ユリ','「Walletは……HashPort Wallet！」'],
+  [s.name,'「最初に俺たちが作ったWalletじゃん！」'],
+  ['クロピー','「きゃわ！ スマホ側で決済用のバーコードを表示して、ローソンのPOSレジで読み取る形が試されたよ。」'],
+  [s.name,'「Web3だから、店員さんが毎回長いWallet Addressを入力するとかじゃないんだ。」'],
+  ['ユリ','「普段のレジに近い操作で使えるかどうかも大切なんでしょうね。」'],
+  ['クロピー','「決済がちゃんと動くかだけじゃなく、レジとの連携、決済にかかる時間、Walletの使いやすさなんかも確かめる実証きゃわ。」'],
+  [s.name,'「“JPYCで買えた！”だけを試してるわけじゃないのか。」']
+ ],[['もう一つの実証を見る',convenienceJpycOsaki]]);
+}
+function convenienceJpycOsaki(){
+ scene('home','heroThink','heroine','right','大崎ではMetaMaskも','kuroppy');
+ dialogue([
+  ['ユリ','「あれ？ 8月17日にも別のローソンで実証しています。」'],
+  [s.name,'「ゲートシティ大崎アトリウム店……こっちはMetaMaskって書いてある！」'],
+  ['クロピー','「きゃわわ！ ついさっき勉強したMetaMaskが登場〜♪」'],
+  [s.name,'「HashPort Wallet、JPYC、MetaMask……今までの話が急につながってきたな。」'],
+  ['ユリ','「大崎の実証ではJPYCだけじゃなく、USDCやUSDTも対象だったんですね。」'],
+  ['クロピー','「どれも価格を法定通貨などに連動させることを目指す“ステーブルコイン”の仲間きゃわ。ただし仕組みや発行者は同じではないよ。」'],
+  [s.name,'「コンビニで暗号資産を使うって聞くと、BTCの値段を見ながらレジで払うのかと思ってた。」'],
+  ['ユリ','「価格の安定を目指すステーブルコインだからこそ、日常決済との相性を試しているわけですね。」']
+ ],[['じゃあ今もローソンで使える？',convenienceJpycReality]]);
+}
+function convenienceJpycReality(){
+ scene('home','heroSmile','heroine','right','実証と正式導入は別','kuroppy');
+ dialogue([
+  [s.name,'「よし。じゃあJPYC入ってるし、からあげクン買ってくる。」'],
+  ['クロピー','「だから待つきゃわーーー！」'],
+  ['ユリ','「話、聞いてました？（笑）」'],
+  [s.name,'「……関係者限定の実証でした。」'],
+  ['クロピー','「正解きゃわ。2026年8月に行われた実証であって、現時点で“全国のローソンで一般のお客さんがJPYC払いできる”という意味ではないきゃわ。」'],
+  ['ユリ','「ニュースで“実証”“検証”“予定”“正式提供”を区別するのって、Web3以外でも大事ですね。」'],
+  [s.name,'「見出しだけだと、もうサービス開始したように感じちゃうもんな。」'],
+  ['クロピー','「新しい技術ほど、何が“できた”のか、誰が“使える”のか、いつの話なのかまで見るきゃわ！」'],
+  [s.name,'「でも、俺たちがゲームで触ってきたWalletやJPYCが、本当に街のレジで試されてるのはちょっとワクワクするな。」'],
+  ['ユリ','「数年後にこのニュースを見返したら、“この頃はまだ実証だったんだ”って思うかもしれませんね。」'],
+  ['クロピー','「その未来がどうなるかも含めて、Web3を見ていくきゃわ〜♪」']
+ ],[['コンビニでJPYC!? 編を終える',convenienceJpycComplete]]);
+}
+function convenienceJpycComplete(){
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('convenienceJpyc'))s.completedChapters.push('convenienceJpyc');
+ s.convenienceJpycDone=true;s.chapter=9;unlockLog(16);save(true);setStoryBgm('jpyc');
+ scene('home','heroSmile','heroine','right','コンビニでJPYC!? 編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「コンビニでJPYC!? 編 COMPLETE〜！ きゃわわ〜♪」'],
+  [s.name,'「HashPort WalletもMetaMaskも、覚えた直後に現実の実証で出てくるとは思わなかった。」'],
+  ['ユリ','「そして“実証された”と“正式に使える”は別。ニュースの読み方も一つ覚えましたね。」'],
+  [s.name,'「次にローソンのニュースを見た時は、全国導入なのか、対象店舗はどこなのかまで確認する。」'],
+  ['クロピー','「それでヨシきゃわ！」'],
+  [s.name,'「よし。ここまでSAVEしておこう。」'],
+  ['クロピー','「次回もお楽しみに〜！」']
+ ],[]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
 }
