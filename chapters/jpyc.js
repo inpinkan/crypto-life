@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.48
+// CRYPTO LIFE v1.0.49
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -1056,11 +1056,11 @@ function metamaskJpycSafety(){
   ['クロピー','「JPYC EX公式も偽JPYCへの注意を出していて、コントラクトアドレスを確認するよう案内しているきゃわ。」'],
   [s.name,'「なるほど。それで公式のコントラクトアドレスを確認するのか。」'],
   [s.name,'「今回は公式のアドレスが分かってるんだよね？」'],
-  ['クロピー','「うん。今回使ってきたPolygon版JPYCの公式コントラクトアドレスはこれきゃわ。」'],
+  ['クロピー','「うん。今回使ってきたPolygon版JPYCの公式コントラクトアドレスはこれきゃわ。一応ITEMに入れておくよ！」'],
   ['クロピー','「'+JPYC_OFFICIAL_CONTRACT+'」'],
   ['クロピー','「JPYC EX公式なら、前にITEMに入れてあるきゃわ。そこから公式情報を確認できるよ。」'],
   [s.name,'「あ、JPYCの時に入れたやつか。そこから確認すればいいんだな。」'],
-  ['ユリ','「はい。実際に使う時は、ITEMにあるJPYC EX公式から最新の情報を確認してくださいね。」']
+  ['ユリ','「はい。実際に使う時は、ITEMにあるJPYC EX公式を確認してくださいね。」']
  ],[['MetaMaskで追加する手順へ',metamaskJpycNetwork]]);
 }
 
@@ -1122,6 +1122,7 @@ function metamaskJpycLessonMaster(){
 }
 
 function metamaskJpycComplete(){
+ if(replay?.active&&replay.chapter==='metamaskJpyc')return finishChapterReplay();
  if(!Array.isArray(s.completedChapters))s.completedChapters=[];
  if(!s.completedChapters.includes('metamaskJpyc'))s.completedChapters.push('metamaskJpyc');
  s.metamaskJpycDone=true;s.chapter=10;unlockLog(17);save(true);setStoryBgm('cafe');
