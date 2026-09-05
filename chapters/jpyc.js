@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.40
+// CRYPTO LIFE v1.0.45
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -1005,6 +1005,139 @@ function convenienceJpycComplete(){
   ['ユリ','「そして“実証された”と“正式に使える”は別。ニュースの読み方も一つ覚えましたね。」'],
   [s.name,'「次にローソンのニュースを見た時は、全国導入なのか、対象店舗はどこなのかまで確認する。」'],
   ['クロピー','「それでヨシきゃわ！」'],
+  [s.name,'「よし。ここまでSAVEしておこう。」'],
+  ['クロピー','「次回もお楽しみに〜！」']
+ ],[]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
+
+
+// --- ところで、MetaMaskにはJPYCは無いの？編 -----------------------------
+const JPYC_OFFICIAL_CONTRACT='0xE7C3D8C9a439feDe00D2600032D5dB0Be71C3c29';
+
+function metamaskJpycStart(){
+ s.chapter=9;setStoryBgm('cafe');
+ scene('cafe','heroSmile','oldMan','right','喫茶クリプトへ','kuroppy');
+ dialogue([
+  [s.name,'「ここが“喫茶クリプト”か。いい雰囲気だな。」'],
+  ['店主','「いらっしゃい。喫茶クリプトへようこそ。コーヒーでも飲みながら、ゆっくりしていってください。」'],
+  ['クロピー','「きゃわ〜♪ Crypto Townの休憩スポットなの〜。」'],
+  [s.name,'「店名はだいぶ休憩させる気ないけど（笑）」'],
+  ['店主','「ははは。難しい話をする時ほど、温かい飲み物があるくらいがちょうどいいんですよ。」'],
+  [s.name,'「じゃあ、ユリも呼んでちょっと聞きたいことがあるんだ。」'],
+  ['店主','「どうぞどうぞ。私は店の仕事に戻ります。何かあれば声をかけてください。」']
+ ],[['ユリと席につく',metamaskJpycQuestion]]);
+}
+
+function metamaskJpycQuestion(){
+ scene('cafe','heroThink','heroine','right','ところで、MetaMaskにはJPYCは無いの？','kuroppy');
+ dialogue([
+  [s.name,'「そういえばさ。MetaMaskを入れたけど……JPYCって無いよね？」'],
+  ['ユリ','「“無い”というより、MetaMaskの画面にまだ表示されていない可能性がありますね。」'],
+  [s.name,'「え？ Walletに表示されてないのに？」'],
+  ['クロピー','「Walletがすべてのトークンを最初から自動で一覧表示するとは限らないきゃわ。EVMのトークンは、コントラクトアドレスを使って手動で表示に追加できるよ。」'],
+  [s.name,'「追加したらJPYCが新しく作られるの？」'],
+  ['ユリ','「いいえ。トークンを追加する操作は、すでにブロックチェーン上にある資産をMetaMaskで認識・表示できるようにするイメージです。」'],
+  [s.name,'「なるほど。“持ってない”と“画面に出てない”は別なのか。」']
+ ],[['JPYCを追加してみる',metamaskJpycSafety]]);
+}
+
+function metamaskJpycSafety(){
+ scene('cafe','heroSurprise','heroine','right','名前とアイコンだけで選ばない','kuroppy');
+ dialogue([
+  [s.name,'「じゃあ検索で“JPYC”って出たやつを選べばいい？」'],
+  ['ユリ','「そこで名前とアイコンだけを信用するのはNGです。」'],
+  [s.name,'「同じ名前って作れるの？」'],
+  ['クロピー','「作れてしまうきゃわ。見た目がそれっぽくても、本物とは限らないよ。」'],
+  ['ユリ','「暗号資産では、トークン名やロゴだけではなく“どのネットワークの、どのコントラクトアドレスか”を確認する習慣が大切です。」'],
+  ['クロピー','「JPYC公式も偽JPYCへの注意を出していて、コントラクトアドレスを確認するよう案内しているきゃわ。」'],
+  [s.name,'「今回は公式のアドレスが分かってるんだよね？」'],
+  ['クロピー','「うん。今回使ってきたPolygon版JPYCの公式コントラクトアドレスはこれきゃわ。」'],
+  ['クロピー','「'+JPYC_OFFICIAL_CONTRACT+'」'],
+  ['クロピー','「このアドレス、あとで使えるようにITEMに入れておくきゃわ！」'],
+  [s.name,'「助かる。これなら毎回探し直さなくていいな。」'],
+  ['ユリ','「便利ですけど、実際に使う時はJPYC公式の最新情報でもう一度確認してくださいね。」']
+ ],[['MetaMaskで追加する手順へ',metamaskJpycNetwork]]);
+}
+
+function metamaskJpycNetwork(){
+ addItem({type:'normal',name:'JPYC Contract Address（Polygon）',desc:JPYC_OFFICIAL_CONTRACT+'\nJPYC公式情報で確認したPolygon版JPYCのコントラクトアドレス。実際に利用する際はJPYC公式情報でも最新の内容を再確認しよう。'});
+ scene('cafe','heroReady','heroine','right','まずネットワークをPolygonに','kuroppy');
+ dialogue([
+  ['クロピー','「まずMetaMaskを開いて、接続先のネットワークがPolygonになっているか『トークン ▷』から確認するきゃわ。」'],
+  [s.name,'「今回はPolygon版JPYCだから……Polygonを選ぶ。」'],
+  ['ユリ','「そうです。同じトークン名でも、ネットワークが違えば別のブロックチェーンを見ています。」'],
+  ['クロピー','「Polygonがまだ一覧に無ければ、ネットワーク選択から追加できるよ。MetaMaskの画面は更新で少し変わることがあるから、表示名も確認しながら進めるきゃわ。」'],
+  [s.name,'「コントラクトアドレスだけ合ってればいいわけじゃなくて、先にネットワークも確認、と。」'],
+  ['ユリ','「ちなみにJPYC公式ではEthereum・Avalanche C-Chain・Polygonに公式アドレスが案内されています。現在は同じ文字列のアドレスでも、ネットワークの確認は省略しないでください。」']
+ ],[['Polygonを選んだ',metamaskJpycImport]]);
+}
+
+function metamaskJpycImport(){
+ scene('cafe','heroThink','heroine','right','カスタムトークンを追加する','kuroppy');
+ dialogue([
+  ['クロピー','「ネットワークを確認したら、“トークン”を開いて“＋”からトークン追加へ進むきゃわ。」'],
+  [s.name,'「検索画面が出た。」'],
+  ['クロピー','「今回は正式なコントラクトアドレスが分かっているから、“カスタムトークン”を選ぶよ。」'],
+  ['ユリ','「トークンアドレスの欄に、JPYC公式で確認したコントラクトアドレスを貼り付けます。」'],
+  [s.name,'「'+JPYC_OFFICIAL_CONTRACT+'……これだな。」'],
+  ['クロピー','「貼り付けたら内容を確認して“次へ”。そのあと“インポート”きゃわ。」'],
+  [s.name,'「……JPYCが出た！」'],
+  ['ユリ','「これでMetaMaskがPolygon上のJPYCを表示できるようになりましたね。」'],
+  ['クロピー','「もしJPYCをまだ持っていなければ、表示を追加しても残高が勝手に増えるわけじゃないよ（笑）」'],
+  [s.name,'「そこは分かってる（笑）」']
+ ],[['今日のポイントを確認する',metamaskJpycLesson]]);
+}
+
+function metamaskJpycLesson(){
+ scene('cafe','heroSmile','oldMan','right','コントラクトアドレスを確認する習慣','kuroppy');
+ dialogue([
+  ['店主','「おや、うまく表示できましたか？」'],
+  [s.name,'「はい。JPYC、出ました。」'],
+  ['店主','「それはよかった。では、そのJPYCが本物だと判断した理由は？」'],
+  [s.name,'「……名前がJPYCだから、じゃない。」']
+ ],[['ユリの答えを聞く',metamaskJpycLessonYuri]]);
+}
+function metamaskJpycLessonYuri(){
+ scene('cafe','heroSmile','heroine','right','コントラクトアドレスを確認する習慣','kuroppy');
+ dialogue([
+  ['ユリ','「アイコンが同じだから、でもないですね。」'],
+  [s.name,'「ネットワークをPolygonにして、JPYC公式でコントラクトアドレスを確認したから。」'],
+  ['クロピー','「きゃわ！ 今日いちばん大事なのは“JPYCを表示できたこと”より、その確認のしかたなの〜。」'],
+  [s.name,'「検索結果や見た目だけでポチッとしない。公式情報からアドレスを確認する。」'],
+  ['ユリ','「Web3は似た名前のものが出てくることがありますからね。少し面倒でも、確認する癖が自分を守ります。」']
+ ],[['店主の話を聞く',metamaskJpycLessonMaster]]);
+}
+function metamaskJpycLessonMaster(){
+ scene('cafe','heroSmile','oldMan','right','コントラクトアドレスを確認する習慣','kuroppy');
+ dialogue([
+  ['店主','「うん。それならいい。」'],
+  ['店主','「コーヒーもトークンも、ラベルだけで中身を決めつけないことです。」'],
+  [s.name,'「店主、うまいこと言った（笑）」']
+ ],[['この編を終える',metamaskJpycComplete]]);
+}
+
+function metamaskJpycComplete(){
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('metamaskJpyc'))s.completedChapters.push('metamaskJpyc');
+ s.metamaskJpycDone=true;s.chapter=10;unlockLog(17);save(true);setStoryBgm('cafe');
+ scene('cafe','heroSmile','heroine','right','ところで、MetaMaskにはJPYCは無いの？編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「“ところで、MetaMaskにはJPYCは無いの？編” COMPLETE〜！ きゃわわ〜♪」'],
+  [s.name,'「無いんじゃなくて、表示されていないことがある。そこからもう勘違いしてたな。」'],
+  ['ユリ','「そして、名前やアイコンよりもネットワークとコントラクトアドレス。」'],
+  [s.name,'「実際に追加する時は、JPYCの公式情報でもう一度確認する。」']
+ ],[['店主に挨拶する',metamaskJpycCompleteMaster]]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
+
+
+function metamaskJpycCompleteMaster(){
+ scene('cafe','heroSmile','oldMan','right','ところで、MetaMaskにはJPYCは無いの？編 COMPLETE','kuroppy');
+ dialogue([
+  ['店主','「それを覚えて帰ってくれたなら、今日のコーヒーはいい仕事をしましたね。」'],
+  [s.name,'「コーヒーの成果なのかな（笑）」'],
+  ['クロピー','「喫茶クリプト、また来るきゃわ〜♪」'],
   [s.name,'「よし。ここまでSAVEしておこう。」'],
   ['クロピー','「次回もお楽しみに〜！」']
  ],[]);

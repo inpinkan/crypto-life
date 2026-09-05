@@ -1,8 +1,9 @@
-// CRYPTO LIFE v1.0.40
+// CRYPTO LIFE v1.0.45
 // 序章〜Wallet編。物語・会話をHTML本体から分離し、今後「JPYC編」「NFT編」などを追加できる構成。
-function begin(){refresh();startAudio();s.history=[];if(s.chapter===0)go(homeIntro);else go(resume)}
+function begin(){refresh();startAudio();s.history=[];claimDailyBonus();if(s.chapter===0)go(homeIntro);else go(resume)}
 function resume(){
- if((s.completedChapters||[]).includes('convenienceJpyc')||s.convenienceJpycDone)return convenienceJpycComplete();
+ if((s.completedChapters||[]).includes('metamaskJpyc')||s.metamaskJpycDone)return metamaskJpycComplete();
+ if((s.completedChapters||[]).includes('convenienceJpyc')||s.convenienceJpycDone)return metamaskJpycStart();
  if((s.completedChapters||[]).includes('bitcoinIntro')||s.bitcoinIntroDone)return convenienceJpycStart();
  if((s.completedChapters||[]).includes('metamaskFront')||s.metamaskFrontDone)return bitcoinIntroStart();
  if((s.completedChapters||[]).includes('walking'))return s.nameRevealDone?metamaskFrontStart():walkingNameAsk();
