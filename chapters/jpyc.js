@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.49
+// CRYPTO LIFE v1.0.59
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -1144,6 +1144,255 @@ function metamaskJpycCompleteMaster(){
   [s.name,'「コーヒーの成果なのかな（笑）」'],
   ['クロピー','「喫茶クリプト、また来るきゃわ〜♪」'],
   [s.name,'「よし。ここまでSAVEしておこう。」'],
+  ['クロピー','「次回もお楽しみに〜！」']
+ ],[]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
+
+/* ===== v1.0.59 MetaMaskにJPYCを送金しよう編 ===== */
+function metamaskJpycSendStart(){
+ scene('cafe','heroNormal','heroine','right','MetaMaskにJPYCを送金しよう','kuroppy');
+ dialogue([
+  [s.name,'「MetaMaskにJPYCも表示できたし、今度はHashPort WalletにあるJPYCを送ってみたいな。」'],
+  ['クロピー','「いいきゃわ！ でも送る前に確認することがあるよ。」'],
+  [s.name,'「Addressとチェーンだろ？」'],
+  ['ユリ','「それも大切です。でも、Walletからブロックチェーン上で送金するにはもうひとつ必要なものがあります。」'],
+  [s.name,'「……あ。ガス代か。」'],
+  ['クロピー','「思い出したきゃわ！ 今回はPolygonだから、ガス代にPOLが必要！」'],
+  [s.name,'「HashPort WalletにJPYCがあっても、POLがなかったら送れないのか。」'],
+  ['ユリ','「そうですね。ではJPYCを送る前に、まずPOLを準備しましょう。」']
+ ],[['POLを準備する',metamaskJpycSendPreparePol]]);
+}
+function metamaskJpycSendPreparePol(){
+ scene('cafe','heroThink','heroine','right','まずはPOLを準備','kuroppy');
+ dialogue([
+  [s.name,'「POLはどうやって用意しよう？」'],
+  ['ユリ','「スワップはまだ勉強していませんから、今回はこれまでに使った取引所から用意しましょう。」'],
+  ['クロピー','「取引所でPOLを用意して、HashPort Walletへ送るきゃわ！」'],
+  [s.name,'「じゃあHashPort WalletのAddressをコピーして……。」'],
+  ['クロピー','「その前に！ POLの送金だって、最初からまとめて送らないきゃわ。」'],
+  [s.name,'「あ、ここでも少額TESTか。」'],
+  ['ユリ','「はい。初めて使う送金先や経路なら、まず少額で届くことを確認する習慣をつけましょう。」']
+ ],[['POLの送金前確認へ',metamaskJpycSendPolCheck]]);
+}
+function metamaskJpycSendPolCheck(){
+ scene('cafe','heroThink','heroine','right','POLを少額TEST送金','kuroppy');
+ dialogue([
+  ['ユリ','「HashPort Walletで受取るPOLのAddressをコピーして、取引所の送金先に入力します。」'],
+  ['クロピー','「Addressの先頭と末尾も見比べるきゃわ！」'],
+  [s.name,'「それと、送金するネットワークもPolygonになっているか確認。」'],
+  ['ユリ','「そうです。取引所によって送金画面、対応ネットワーク、最低送金数量、手数料などは異なるので、実際に操作する時は最新の案内と画面表示を確認してくださいね。」'],
+  ['クロピー','「確認できたら、まずは無理のない少額のPOLでTESTきゃわ！」']
+ ],[['少額のPOLを送る',metamaskJpycSendPolTest]]);
+}
+function metamaskJpycSendPolTest(){
+ scene('cafe','heroNormal','heroine','right','POLの着金を確認','kuroppy');
+ dialogue([
+  [s.name,'「少額のPOLを送信……っと。」'],
+  ['クロピー','「すぐ次を送らず、HashPort Walletに届くまで確認するきゃわ。」'],
+  [s.name,'「……POLが届いた！」'],
+  ['ユリ','「これで今回のAddressとネットワークで届くことを少額で確認できました。」'],
+  ['クロピー','「必要なら、この確認のあとでガス代に使うPOLを準備するきゃわ！」'],
+  [s.name,'「まずPOLの経路をTESTしてから、JPYCの送金に進むわけだな。」']
+ ],[['JPYCの送金へ',metamaskJpycSendChain]]);
+}
+function metamaskJpycSendChain(){
+ scene('cafe','heroThink','heroine','right','JPYCの小さいマークを思い出そう','kuroppy');
+ dialogue([
+  ['クロピー','「POLも準備できたし、いよいよJPYCきゃわ。ここでもJPYCの隅にある小さいマークを確認するきゃわ。」'],
+  [s.name,'「またか、忘れないようにしないとな。」'],
+  ['ユリ','「はい。同じJPYCでも、どのネットワーク上のJPYCなのか確認するための大切な表示ですね。」'],
+  ['クロピー','「今回はMetaMaskのPolygonへ送るから、Polygonのマークが付いたJPYCを確認するきゃわ！」'],
+  [s.name,'「名前がJPYCだからOKじゃない。今回はPolygon版JPYCを選ぶ。」']
+ ],[['Polygon版JPYCを確認した',metamaskJpycSendAddress]]);
+}
+function metamaskJpycSendAddress(){
+ scene('cafe','heroNormal','heroine','right','MetaMaskの受取Addressを確認','kuroppy');
+ dialogue([
+  ['ユリ','「次はMetaMaskで受取Addressを確認してコピーします。」'],
+  ['クロピー','「HashPort Walletの送金先に貼ったあとも、先頭と末尾を見比べるきゃわ！」'],
+  [s.name,'「送るのはPolygon版JPYC。HashPort Walletにはガス代のPOLもある。Addressも確認。」'],
+  ['ユリ','「はい。でも、ここでも最初から大きな金額は送りません。」'],
+  [s.name,'「JPYCも少額TESTだな。」'],
+  ['クロピー','「そのとおり！ 資産が変わっても基本は同じきゃわ！」']
+ ],[['JPYCを少額TEST送金する',metamaskJpycSendTest]]);
+}
+function metamaskJpycSendTest(){
+ scene('cafe','heroThink','heroine','right','JPYCも最初は少額TEST','kuroppy');
+ dialogue([
+  [s.name,'「よし。まずは少額のJPYCだけ送ってみる。」'],
+  ['ユリ','「このゲームでは実際の送金は行いません。実際に試す場合も、自分で無理のない少額にしてください。」'],
+  ['クロピー','「Address、Polygon版JPYC、ガス代のPOL……もう一度確認きゃわ！」'],
+  [s.name,'「確認した。少額で送信！」'],
+  ['クロピー','「送ったら、すぐ残りを送らずにMetaMaskへの着金を確認するきゃわ！」']
+ ],[['MetaMaskの着金を確認する',metamaskJpycSendArrival]]);
+}
+function metamaskJpycSendArrival(){
+ scene('cafe','heroSmile','heroine','right','JPYCの着金を確認','kuroppy');
+ dialogue([
+  [s.name,'「MetaMaskにJPYCが届いた！」'],
+  ['ユリ','「これで、今回のAddressとPolygonの経路でJPYCが届くことを少額で確認できましたね。」'],
+  ['クロピー','「POLの時もJPYCの時も、まず少額TEST。これが大事きゃわ！」'],
+  [s.name,'「送るものが何であっても、初めての送金先や経路なら少額で確認してから次へ、だな。」']
+ ],[['Walletと取引所の違いも確認する',metamaskJpycSendExchangeLesson]]);
+}
+function metamaskJpycSendExchangeLesson(){
+ scene('cafe','heroNormal','heroine','right','ガス代と取引所の送金手数料','kuroppy');
+ dialogue([
+  [s.name,'「そういえば、取引所からPOLを送った時は、HashPort Walletみたいに自分でPOLをガス代として用意しなかったな。」'],
+  ['ユリ','「そこも大事な違いです。自分のWalletからオンチェーン送金する時は、ネットワークのガス代を自分のWalletから支払います。」'],
+  ['クロピー','「でも取引所から出庫する時は、利用者がWalletみたいにガス代を直接払う形とは限らないきゃわ。」'],
+  ['ユリ','「取引所が定めた送金手数料がかかる場合があり、送る資産から差し引かれる場合もあります。」'],
+  ['クロピー','「でも“送ったトークンがガス代になった”ってことじゃないよ。取引所の送金手数料と、ブロックチェーンのガス代は別ものきゃわ！」'],
+  [s.name,'「なるほど。Walletから送る時と取引所から送る時では、手数料の見え方も違うんだな。」']
+ ],[['今日のポイントを確認する',metamaskJpycSendLesson]]);
+}
+function metamaskJpycSendLesson(){
+ scene('cafe','heroSmile','oldMan','right','送金は急がない','kuroppy');
+ dialogue([
+  ['店主','「送金は、急がないことも立派な技術ですよ。」'],
+  [s.name,'「まず必要なガス代を確認。送金先Addressとネットワークを確認。そして少額TEST。」'],
+  ['ユリ','「少額が届いたことを確認してから次へ進む。大切な資産を扱う時の基本ですね。」'],
+  ['クロピー','「POLでもJPYCでも、最初は少額からきゃわ！」']
+ ],[['この編を終える',metamaskJpycSendComplete]]);
+}
+function metamaskJpycSendComplete(){
+ if(replay?.active&&replay.chapter==='metamaskJpycSend')return finishChapterReplay();
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('metamaskJpycSend'))s.completedChapters.push('metamaskJpycSend');
+ s.metamaskJpycSendDone=true;s.chapter=11;unlockLog(18);save(true);setStoryBgm('cafe');
+ scene('cafe','heroSmile','heroine','right','MetaMaskにJPYCを送金しよう編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「“MetaMaskにJPYCを送金しよう編” COMPLETE〜！ きゃわわ〜♪」'],
+  [s.name,'「POLを準備する時も、JPYCを送る時も、まず少額TEST。」'],
+  ['ユリ','「Address・ネットワーク・ガス代・着金確認。ひとつずつ確認して進みましょう。」'],
+  ['クロピー','「次回もお楽しみに〜！」']
+ ],[]);
+ setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
+}
+
+
+
+/* ===== v1.0.59 アドレスポイズニング編 ===== */
+function addressPoisoningStart(){
+ scene('townNight','heroNormal','heroine','right','夜のCrypto Town','kuroppy');
+ dialogue([
+  [s.name,'「喫茶クリプトにずっといるのもなんだし、少し歩いて帰るか。」'],
+  ['ユリ','「そうですね。夜のCrypto Townも雰囲気が違っていいですね。」'],
+  ['クロピー','「夜風が気持ちいいきゃわ〜♪」'],
+  [s.name,'「POLもJPYCも送れたし、送金はだいぶ分かってきたな。」'],
+  ['クロピー','「少額TESTもちゃんとできたきゃわ！」'],
+  [s.name,'「でも毎回Addressをコピーして確認するのは、ちょっと面倒だな。前に送った相手なら履歴から使えば早そうだ。」']
+ ],[['町を歩く',addressPoisoningScammerAppears]]);
+}
+
+function addressPoisoningScammerAppears(){
+ setStoryBgm('danger');
+ scene('townNight','heroThink','scammer','right','声をかけてきた男','kuroppy');
+ dialogue([
+  ['詐欺師','「お、それなら簡単だよ。」'],
+  [s.name,'「……ん？」'],
+  ['詐欺師','「一度送った相手なら取引履歴に残ってる。そこからAddressをコピーすればいい。」'],
+  [s.name,'「まあ、確かに……。」'],
+  ['詐欺師','「毎回全部確認する必要なんてない。頭と末尾が同じなら、ほぼ同じようなもんだ。」'],
+  ['クロピー','「……きゃわ？」'],
+  ['ユリ','「ちょっと待ってください。」']
+ ],[['Addressを見てみる',addressPoisoningTrap]]);
+}
+
+function addressPoisoningTrap(){
+ scene('townNight','heroThink','scammer','right','同じAddress……？','kuroppy');
+ dialogue([
+  ['ユリ','「そのAddress、本当に同じですか？」'],
+  [s.name,'「頭と末尾は同じに見えるけど？」'],
+  ['詐欺師','「だから大丈夫だって。細かいところまで見る必要ないよ。」'],
+  ['ユリ','「いいえ。省略された表示だけで判断するのは危険です。」'],
+  ['クロピー','「たとえば、こういうAddressがあったとするきゃわ。」'],
+  ['クロピー','「正しいAddress　0x12AB34……567890EF\n似せたAddress　0x12AB91……223490EF」'],
+  [s.name,'「頭と末尾は似てるのに、途中が違う！」'],
+  ['ユリ','「そうです。同じように見えても、別のAddressです。」']
+ ],[['どういうこと？',addressPoisoningExplain]]);
+}
+
+function addressPoisoningExplain(){
+ scene('townNight','heroThink','scammer','right','取引履歴に紛れ込む罠','kuroppy');
+ dialogue([
+  ['クロピー','「それが“アドレスポイズニング”で使われる手口のひとつきゃわ！」'],
+  ['ユリ','「過去に使った送金先と似たAddressを用意し、取引履歴などに紛れ込ませて、次の送金で誤ってコピーさせようとする手口があります。」'],
+  [s.name,'「怪しいサイトを開いたわけでも、秘密情報を教えたわけでもないのに？」'],
+  ['ユリ','「はい。いつもの取引履歴を見て、いつもの相手だと思い込むことで被害につながる可能性があります。」'],
+  ['クロピー','「“履歴にあるから安全”“頭と末尾が似てるから同じ”って決めつけるのは危ないきゃわ！」'],
+  [s.name,'「知らなかったら普通に引っかかりそうだな……。」']
+ ],[['さっきの男に聞く',addressPoisoningGone]]);
+}
+
+function addressPoisoningGone(){
+ scene('townNight','heroThink','heroine','right','……いない','kuroppy');
+ dialogue([
+  [s.name,'「……っていうか、さっきの人は？」'],
+  ['クロピー','「きゃわ？」'],
+  [s.name,'「履歴からコピーしろって言ってた奴。」'],
+  ['ユリ','「…………。」'],
+  [s.name,'「あいつ、まさか……。」'],
+  ['クロピー','「詐欺師きゃわ！！」'],
+  [s.name,'「どこ行った！？」'],
+  ['ユリ','「また、いなくなりましたね……。」'],
+  ['クロピー','「逃げ足だけは速いきゃわーー！！」']
+ ],[['気をつける方法を考える',addressPoisoningDefense]]);
+}
+
+function addressPoisoningDefense(){
+ setStoryBgm(storyBgmMode());
+ scene('townNight','heroNormal','heroine','right','自分を守る確認','kuroppy');
+ dialogue([
+  [s.name,'「じゃあ、どうやって防げばいい？」'],
+  ['ユリ','「まず、取引履歴にあるAddressを無条件に信用しないことです。」'],
+  ['クロピー','「送金先は、受取側のWalletなど信頼できる元から改めて取得するきゃわ！」'],
+  ['ユリ','「そして省略された先頭と末尾だけで同じAddressだと判断せず、可能な範囲で十分に確認しましょう。」'],
+  [s.name,'「ネットワークの確認も忘れない。」'],
+  ['クロピー','「そうきゃわ。そして、もうひとつ！」'],
+  [s.name,'「……少額TESTだな。」'],
+  ['クロピー','「正解きゃわ！」']
+ ],[['少額TESTも自己防衛？',addressPoisoningTest]]);
+}
+
+function addressPoisoningTest(){
+ scene('townNight','heroNormal','heroine','right','少額TESTも自己防衛','kuroppy');
+ dialogue([
+  ['ユリ','「Addressを正しく確認することが第一です。そのうえで、最初に少額を送り、意図した相手に着金したことを確認してから次へ進む習慣も大切です。」'],
+  [s.name,'「誤送金対策だけじゃなく、こういう時の自己防衛にもつながるのか。」'],
+  ['クロピー','「いきなり大きな金額を送らない。何かがおかしかった時に気づく機会を作るきゃわ！」'],
+  ['ユリ','「少額TESTをして、意図したWalletへの着金が確認できれば、次の送金へ進む判断材料になります。逆に着金が確認できなければ、そこで止まることで大きな被害を避けられる可能性があります。」'],
+  [s.name,'「確認して、少額で試して、着金を確認してから次へ。」']
+ ],[['もう少し整理する',addressPoisoningLesson]]);
+}
+
+function addressPoisoningLesson(){
+ scene('townNight','heroSmile','heroine','right','疑うより、確認する','kuroppy');
+ dialogue([
+  [s.name,'「でも、こういう詐欺って知らないうちに引っかかる人も多そうだな。」'],
+  ['ユリ','「そう思います。だから、詐欺をする側が悪いのは当然ですが、自分の資産を守るための対策も必要です。」'],
+  ['クロピー','「誰かを責めるためじゃなくて、自分が次の被害者にならないために覚えるきゃわ！」'],
+  [s.name,'「騙される方が悪いって話じゃなくて、騙されないための準備は自分でもできるってことか。」'],
+  ['ユリ','「はい。知らないうちに罠へ誘導されることもあります。だから確認する習慣が大切なんです。」'],
+  ['クロピー','「詐欺師を信用しないだけじゃ足りないきゃわ。自分の操作も毎回確認する！」'],
+  [s.name,'「疑うことより、確認すること。」']
+ ],[['この編を終える',addressPoisoningComplete]]);
+}
+
+function addressPoisoningComplete(){
+ if(replay?.active&&replay.chapter==='addressPoisoning')return finishChapterReplay();
+ if(!Array.isArray(s.completedChapters))s.completedChapters=[];
+ if(!s.completedChapters.includes('addressPoisoning'))s.completedChapters.push('addressPoisoning');
+ s.addressPoisoningDone=true;
+ s.chapter=12;
+ unlockLog(19);
+ save(true);
+ scene('townNight','heroSmile','heroine','right','アドレスポイズニング編 COMPLETE','kuroppy');
+ dialogue([
+  ['クロピー','「“アドレスポイズニング編” COMPLETE〜！ きゃわわ〜♪」'],
+  [s.name,'「履歴や省略表示を信用しすぎない。Addressを改めて確認して、最初は少額TEST。」'],
+  ['ユリ','「詐欺をする側が悪いのは当然です。そのうえで、自分の資産を守る知識と習慣も身につけていきましょう。」'],
   ['クロピー','「次回もお楽しみに〜！」']
  ],[]);
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
