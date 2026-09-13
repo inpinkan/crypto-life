@@ -1,4 +1,4 @@
-// CRYPTO LIFE v1.0.60
+// CRYPTO LIFE v1.0.62
 // JPYC編：JPYC・チェーン・ガス代・取引所・送金を、実体験と会話でつなぐ。
 
 function jpycStart(){
@@ -1149,7 +1149,7 @@ function metamaskJpycCompleteMaster(){
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
 }
 
-/* ===== v1.0.60 MetaMaskにJPYCを送金しよう編 ===== */
+/* ===== v1.0.62 MetaMaskにJPYCを送金しよう編 ===== */
 function metamaskJpycSendStart(){
  scene('cafe','heroNormal','heroine','right','MetaMaskにJPYCを送金しよう','kuroppy');
  dialogue([
@@ -1273,9 +1273,8 @@ function metamaskJpycSendComplete(){
 
 
 
-/* ===== v1.0.60 アドレスポイズニング編 ===== */
+/* ===== v1.0.62 アドレスポイズニング編 ===== */
 function addressPoisoningStart(){
- playExternalBgm('town_night');
  scene('townNight','heroNormal','heroine','right','夜のCrypto Town','kuroppy');
  dialogue([
   [s.name,'「喫茶クリプトにずっといるのもなんだし、少し歩いて帰るか。」'],
@@ -1288,7 +1287,7 @@ function addressPoisoningStart(){
 }
 
 function addressPoisoningScammerAppears(){
- playExternalBgm('scammer_danger');
+ setStoryBgm('danger');
  scene('townNight','heroThink','scammer','right','声をかけてきた男','kuroppy');
  dialogue([
   ['詐欺師','「お、それなら簡単だよ。」'],
@@ -1328,6 +1327,7 @@ function addressPoisoningExplain(){
 }
 
 function addressPoisoningGone(){
+ setStoryBgm(storyBgmMode());
  scene('townNight','heroThink','heroine','right','……いない','kuroppy');
  dialogue([
   [s.name,'「……っていうか、さっきの人は？」'],
@@ -1343,7 +1343,6 @@ function addressPoisoningGone(){
 }
 
 function addressPoisoningDefense(){
- playExternalBgm('town_night');
  scene('townNight','heroNormal','heroine','right','自分を守る確認','kuroppy');
  dialogue([
   [s.name,'「じゃあ、どうやって防げばいい？」'],
