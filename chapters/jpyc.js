@@ -1393,7 +1393,7 @@ function addressPoisoningComplete(){
   ['クロピー','「“アドレスポイズニング編” COMPLETE〜！ きゃわわ〜♪」'],
   [s.name,'「履歴や省略表示を信用しすぎない。Addressを改めて確認して、最初は少額TEST。」'],
   ['ユリ','「詐欺をする側が悪いのは当然です。そのうえで、自分の資産を守る知識と習慣も身につけていきましょう。」'],
-  ['クロピー','「次回もお楽しみに〜！」']
- ],[]);
+  ['クロピー','「確認する習慣を身につけたところで、次はNFTの世界ものぞいてみよう！」']
+ ],[['NFTって何？買ってみたい！編へ',nftStart]]);
  setTimeout(()=>document.querySelector('#save')?.classList.add('save-guide'),80);
 }
