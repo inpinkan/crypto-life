@@ -2,7 +2,8 @@
 // 序章〜Wallet編。物語・会話をHTML本体から分離し、今後「JPYC編」「NFT編」などを追加できる構成。
 function begin(){refresh();startAudio();s.history=[];claimDailyBonus();if(s.chapter===0)go(homeIntro);else go(resume)}
 function resume(){
- if((s.completedChapters||[]).includes('nft')||s.nftDone)return nftComplete();
+ if((s.completedChapters||[]).includes('commands')||s.commandsDone)return commandsComplete();
+ if((s.completedChapters||[]).includes('nft')||s.nftDone)return commandsStart();
  if((s.completedChapters||[]).includes('addressPoisoning')||s.addressPoisoningDone)return nftStart();
  if((s.completedChapters||[]).includes('metamaskJpycSend')||s.metamaskJpycSendDone)return addressPoisoningStart();
  if((s.completedChapters||[]).includes('metamaskJpyc')||s.metamaskJpycDone)return metamaskJpycSendStart();
